@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="160px" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>B techaers manager</title>
+    <defs>
+        <circle id="path-1" cx="50" cy="50" r="50"></circle>
+        <filter x="-45.0%" y="-45.0%" width="190.0%" height="190.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="10" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.0588235294   0 0 0 0 0.0823529412   0 0 0 0 0.2  0 0 0 1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="-10" dy="-10" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter2" in2="SourceAlpha" operator="out" result="shadowBlurOuter2"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.0245166249   0 0 0 0 0.0658336004   0 0 0 0 0.272418478  0 0 0 1 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-page" transform="translate(-48.000000, -493.000000)">
+            <g id="Group" transform="translate(78.000000, 523.000000)">
+                <g id="Oval">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <circle stroke="#061145" stroke-width="1" stroke-linejoin="square" fill="#181E47" fill-rule="evenodd" cx="50" cy="50" r="49.5"></circle>
+                </g>
+                <g id="account_circle-black-18dp" transform="translate(14.285714, 14.285714)">
+                    <polygon id="Path" points="0 0 71.4285714 0 71.4285714 71.4285714 0 71.4285714"></polygon>
+                    <path d="M35.7142857,5.90318772 C19.2585596,5.90318772 5.90318772,19.2585596 5.90318772,35.7142857 C5.90318772,52.1700118 19.2585596,65.5253837 35.7142857,65.5253837 C52.1700118,65.5253837 65.5253837,52.1700118 65.5253837,35.7142857 C65.5253837,19.2585596 52.1700118,5.90318772 35.7142857,5.90318772 Z M35.7142857,14.8465171 C40.662928,14.8465171 44.6576151,18.8412043 44.6576151,23.7898465 C44.6576151,28.7384888 40.662928,32.7331759 35.7142857,32.7331759 C30.7656434,32.7331759 26.7709563,28.7384888 26.7709563,23.7898465 C26.7709563,18.8412043 30.7656434,14.8465171 35.7142857,14.8465171 Z M35.7142857,57.1782763 C28.2615112,57.1782763 21.6732586,53.3624557 17.8276269,47.5791027 C17.9170602,41.6466942 29.7520661,38.3972845 35.7142857,38.3972845 C41.6466942,38.3972845 53.5115112,41.6466942 53.6009445,47.5791027 C49.7553129,53.3624557 43.1670602,57.1782763 35.7142857,57.1782763 Z" id="Shape" fill="#3069F4" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
