@@ -1,15 +1,12 @@
 import React from 'react';
-import '../assets/styles/components/TeachersList.scss'
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Photo from '../assets/images/favicon.png'
-import '../assets/styles/components/TeachersList.scss'
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 export default function TeachersList({name, type, cover}) {
   const classes = useStyles();
   return (
-    <div className='teachersList'>
+    <div>
           <div className={classes.demo}>
             <List>
                 <ListItem>
