@@ -1,0 +1,26 @@
+.info {
+margin: 5% auto;
+padding: 0;
+width: 100%;
+height: auto;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+align-content: flex-start;
+}
+
+#school-logo {
+width: 90px;
+height: 90px;
+box-shadow: 10px 10px 20px 0 #0f1533, -10px -10px 20px 0 #061145;
+background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/The_Woodlands_College_Park_Front_Image.jpg/220px-The_Woodlands_College_Park_Front_Image.jpg') no-repeat center;
+border-radius: 50%;
+}
+
+#Name-School {
+font-size: 20px;
+font-weight: 500;
+width: 100%;
+color: #fefefe;
+margin: 2% auto;
+}

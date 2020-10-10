@@ -1,0 +1,21 @@
+.Status-licence {
+display: flex;
+flex-wrap: nowrap;
+align-items: baseline;
+margin: 10px auto 5px;
+}
+.Status-licence > p {
+height: auto;
+margin: 0;
+font-size: 14px;
+font-weight: 300;
+color: #fefefe;
+}
+#icon-status {
+background-color: #63cfa6;
+width: 8px;
+height: 8px;
+margin: 5px;
+padding: 0;
+border-radius: 50%;
+}
