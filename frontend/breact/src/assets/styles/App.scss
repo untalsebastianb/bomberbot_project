@@ -1,5 +1,14 @@
 @import "./Var.scss";
+
+
 body {
     margin: 0;
-    font-family: $theme-font;
+    
+}
+
+#app {
+height: 100vh;
+font-family: $theme-font;
+display: flex;
+flex-direction: row;
 }
