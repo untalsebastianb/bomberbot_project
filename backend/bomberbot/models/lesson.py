@@ -6,7 +6,12 @@ from .student import Student
 class Lesson(models.Model):
     """Model that is an abstraction of a lesson inside the platform"""
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30,blank=False)
     class_room_id = models.ForeignKey(Classroom, on_delete=models.CASCADE)
-    student_id = models.ManyToManyField(Student)
-    score = models.BigIntegerField()
+    student_id = models.ManyToManyField(Student, blank=True)
+    # score = models.BigIntegerField()
+    create=models.DateTimeField(auto_now_add=True)
+    modified=models.DateTimeField(auto_now=True)
+    def __str__(self):
+        """Return username."""
+        return self.name
