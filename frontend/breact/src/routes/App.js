@@ -7,7 +7,9 @@ import '../assets/styles/App.scss'
 const App = () => (
 <>
 <Layout>
-<TeachersManager />
+  <div className='right-container'>
+    <TeachersManager />
+  </div>
 </Layout>
 </>
 )
