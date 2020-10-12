@@ -17,6 +17,7 @@ return(
 // Aqui va el componente que hizo info / compontente/container FIJO ⚛️
 
 <div className=''>
+  <MenuBar/>
 <button onClick={handler}>Logout</button>
 {/* Aqui van todos los componentes que van a cambiar del layout */}
 {children}
