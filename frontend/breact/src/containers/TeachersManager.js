@@ -12,7 +12,7 @@ const App = () => {
   console.log(teacher)
   return (
     <div className='teacherList'>
-      <Typography variant='h2'>
+      <Typography variant='h3'>
         Teachers Manager
       </Typography>
       {
