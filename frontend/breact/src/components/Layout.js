@@ -16,13 +16,15 @@ const handler = () => {
 return(
 // Aqui va el componente que hizo info / compontente/container FIJO ⚛️
 
-<div className=''>
-  <MenuBar/>
-<button onClick={handler}>Logout</button>
-{/* Aqui van todos los componentes que van a cambiar del layout */}
-{children}
-</>
+<div className='parent-container'>
+    <MenuBar/>
+    <button onClick={handler}>Logout</button>
+    <div className='right-container'>
+        {/* Aqui van todos los componentes que van a cambiar del layout */}
+        {children}
+    </div>
+    
+</div>
 )
-
 }
-export default Layout
+export default Layout;
