@@ -1,0 +1,16 @@
+
+@import "./Var.scss";
+body {
+    margin: 0;
+    font-family: $theme-font;
+}
+
+.right-container {
+    margin: 12% 0 0 4%;
+}
+
+#app > .parent-container {
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+
