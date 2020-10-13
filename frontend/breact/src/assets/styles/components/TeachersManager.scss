@@ -2,6 +2,12 @@
 
 .teacherList {
   margin: 0;
-  border: 2px solid red;
-  margin-left: 300px;
+}
+
+.teacherList > h3 {
+  color: #0F1533;
+}
+
+.teacherList span {
+  color: #0F1533;
 }
