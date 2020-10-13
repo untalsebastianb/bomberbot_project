@@ -1,9 +1,13 @@
 .options {
 width: 90%;
-height: 60%;
+height: 55%;
+padding: 5% 0;
 border-top: solid 1px #fefefe;
 border-bottom: solid 1px #fefefe;
-justify-content: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
 flex-wrap: wrap;
-align-content: flex-start;
+box-sizing: border-box;
 }
