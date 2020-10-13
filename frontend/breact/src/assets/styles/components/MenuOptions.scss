@@ -1,10 +1,12 @@
 .options {
 width: 90%;
+height: 60%;
 border-top: solid 1px #fefefe;
 border-bottom: solid 1px #fefefe;
 justify-content: center;
 flex-wrap: wrap;
 align-content: flex-start;
+
 }
 
 .Oval {
@@ -12,9 +14,9 @@ box-sizing: border-box;
 display: flex;
 align-items: center;
 justify-content: center;
-width: 60px;
-height: 60px;
-margin: 5% auto;
+width: 45%;
+height:15%;
+margin: 13% auto;
 box-shadow: 10px 10px 20px 0 #0f1533, -10px -10px 20px 0 #061145;
 border: solid 1px #061145;
 border-radius: 50%;

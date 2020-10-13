@@ -1,13 +1,14 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import TeachersManager from '../containers/TeachersManager'
 import '../assets/styles/App.scss'
+import Comunication from '../containers/Comunications'
 
 
 const App = () => (
 <>
-<Layout>
-<TeachersManager />
+<Layout>    
+{/*<TeachersManager />*/}
+<Comunication/>
 </Layout>
 </>
 )
