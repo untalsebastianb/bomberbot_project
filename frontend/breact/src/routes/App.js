@@ -1,11 +1,10 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import HomePage from '../containers/HomePage'
 //import Comunication from '../containers/Comunications'
 // import TeachersManager from '../containers/TeachersManager'
 import '../assets/styles/App.scss'
-import HomePage from '../containers/HomePage'
-
-
+// import BuyLicenses from '../containers/BuyLicenses'
 
 const App = () => (
 <>
@@ -13,6 +12,7 @@ const App = () => (
     <HomePage />
     {/* <TeachersManager /> */}
     {/*<Comunication/>*/}
+    {/* <BuyLicenses /> */}
 </Layout>
 </>
 )
