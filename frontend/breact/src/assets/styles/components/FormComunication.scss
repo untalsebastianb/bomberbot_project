@@ -1,0 +1,64 @@
+.block-input{
+    display: flex;
+    flex-direction: column;
+    width: 92%;
+    margin:2%;
+    border-radius: 8px;
+    box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
+    border: solid 2px #aeb7f2;
+    background-color: #fefefe;
+    align-items: center;
+}
+.block-input input{
+    width: 95%;
+
+}
+.block-input input{
+    border:none;   
+    outline: none;
+}
+#to{
+    border-bottom: solid 1px #aeb7f2;
+}
+.block-message{
+    display: flex;
+    flex-direction: column;
+    width: 92%;
+    height: 18rem;
+    margin:2%;
+    border-radius: 8px;
+    box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
+    border: solid 2px #aeb7f2;
+    background-color: #fefefe;
+    
+}
+.block-message button{
+    
+    width: 50px;
+    margin-right: 2%;
+    height: 25px;
+    border: none;
+    border-radius: 10%;
+    background-color: #3069f4;
+    align-self: flex-end;
+    color: white;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    cursor: pointer;
+}
+
+.block-message button:hover{
+   opacity: 90%;
+
+}
+.block-message textarea{
+    height: 85%;
+    border: none;
+    width: 98%;
+    align-self:center;
+    outline: none;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    resize: none;
+
+    
+
+}
