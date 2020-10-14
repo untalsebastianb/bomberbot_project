@@ -9,7 +9,7 @@ function HomePage() {
                 <img src={logo} alt='Icons'></img>
             </div>
             <div id='Welcome'>
-                <h3>Welcom to Bomberbot school manager</h3>
+                <h3>Welcome to Bomberbot school manager</h3>
                 <h4>Select an option to continue</h4>
             </div>
         </div>
