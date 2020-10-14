@@ -1,14 +1,20 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import TeachersManager from '../containers/TeachersManager'
+//import HomePage from '../containers/HomePage'
+import TeacherProfile from '../containers/TeacherProfile'
+//import Comunication from '../containers/Comunications'
 import '../assets/styles/App.scss'
-
+// import BuyLicenses from '../containers/BuyLicenses'
 
 const App = () => (
 <>
-<Layout>
-<TeachersManager />
+<Layout>    
+    {/*<HomePage />*/}
+    <TeacherProfile />
+    {/* <TeachersManager /> */}
+    {/*<Comunication/>*/}
+    {/* <BuyLicenses /> */}
 </Layout>
 </>
 )
-export default App
+export default App;

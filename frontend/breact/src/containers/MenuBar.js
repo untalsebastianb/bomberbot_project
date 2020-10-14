@@ -23,8 +23,10 @@ function MenuBar() {
         <MenuButton icons={buy_icon}/>
         <MenuButton icons={exit_icon}/>
       </MenuOptions>
-      <p id='Call-us'> Call us today! <br/>+31 (0)20 894 3044</p>
-      <p id='email'>hello@bomberbot.com</p>
+      <div className="contact-us">
+        <p id='Call-us'> Call us today!<br/>+31 (0)20 894 3044</p>
+        <p id='email'>hello@bomberbot.com</p>
+      </div>
     </div>
   )
 }
