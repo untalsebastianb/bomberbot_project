@@ -1,3 +1,4 @@
+
 import React from 'react'
 import MenuBar from '../containers/MenuBar'
 import logo from '../assets/images/bomberbotLogo.png';
@@ -29,6 +30,5 @@ return(
 </div>
 )
 }
-
 export default Layout;
 
