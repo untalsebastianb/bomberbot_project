@@ -10,6 +10,7 @@ import MenuOptions from '../components/MenuOptions';
 import MenuInfo from '../components/MenuInfo';
 import MenuButton from '../components/MenuButton';
 
+
 function MenuBar() {
   return (
     <div className='menu'>
@@ -17,7 +18,7 @@ function MenuBar() {
         <StatusLicense/>
       </MenuInfo>
       <MenuOptions>
-        <MenuButton icons={school_icon}/>
+        <MenuButton icons={school_icon} route={'/teacher_profile'} text={'School'}/>
         <MenuButton icons={teacher_icon}/>
         <MenuButton icons={comunications_icon}/>
         <MenuButton icons={buy_icon}/>
