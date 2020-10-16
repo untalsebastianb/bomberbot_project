@@ -7,19 +7,12 @@ import logo from '../assets/images/bomberbotLogo.png';
 
 const Layout = ({children}) => {
 
-const handler = () => {
-
-    // const url = (window.location.href + 'logout')
-    const url = ('http://127.0.0.1:8000/logout')
-    // console.log(url)
-    window.open(url,"_self")
-}
 
 return(
 // Aqui va el componente que hizo info / compontente/container FIJO ⚛️
 <div className='parent-container'>
     <MenuBar/>
-    <button onClick={handler}>Logout</button>
+    <div></div>
     <div className='right-container'>
         <div className='Logo-bomberbot'>
             <img src={logo} alt='Logo'></img>

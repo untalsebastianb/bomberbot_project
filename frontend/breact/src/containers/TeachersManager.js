@@ -8,7 +8,7 @@ import SearchBar from '../components/SearchBar'
 
 const API = 'http://localhost:3000/initalState'
 
-const App = () => {
+const TeacherManager = () => {
   const teacher = useInitialState(API);
   console.log(teacher)
   return (
@@ -31,5 +31,5 @@ const App = () => {
     </div>
   )
 }
-export default App
+export default TeacherManager
 
