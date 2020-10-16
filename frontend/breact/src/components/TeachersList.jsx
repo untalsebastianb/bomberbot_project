@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 export default function TeachersList({name, type, cover}) {
   const classes = useStyles();
   return (
-    <div>
+    <>
           <div className={classes.demo}>
             <List>
                 <ListItem>
@@ -48,6 +48,6 @@ export default function TeachersList({name, type, cover}) {
                 </ListItem>
             </List>
           </div>
-      </div>
+      </>
   );
 }

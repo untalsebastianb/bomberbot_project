@@ -3,6 +3,7 @@ import TeachersList from '../components/TeachersList'
 import useInitialState from '../hooks/useInitialState.js'
 import '../assets/styles/components/TeachersManager.scss'
 import Typography from '@material-ui/core/Typography';
+import SearchBar from '../components/SearchBar'
 
 
 const API = 'http://localhost:3000/initalState'
@@ -15,6 +16,9 @@ const App = () => {
       <Typography variant='h3'>
         Teachers Manager
       </Typography>
+      <br></br>
+      <SearchBar/>
+      <br></br>
       {
         teacher.teachers?.length > 0 &&
             <>
