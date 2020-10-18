@@ -9,8 +9,6 @@ class Teacher(models.Model):
     first_name = models.CharField(max_length=30,blank=False)
     last_name = models.CharField(max_length=30,blank=False)
     school_id = models.ForeignKey(School, on_delete=models.CASCADE)
-    # user_name = models.CharField(max_length=30)
-    # password = models.CharField(max_length=30)
     email = models.EmailField(max_length=30,blank=False, unique=True)
     address = models.CharField(max_length=30,blank=True)
     score = models.FloatField(blank=True, null=True, default=0)
