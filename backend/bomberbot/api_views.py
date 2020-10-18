@@ -6,10 +6,10 @@ from django.forms.models import model_to_dict
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
-
+from rest_framework.decorators import api_view
 
 # # Create your views here.
-from .serializers import SchoolSerializer, TeacherSerializer
+from .serializers import SchoolSerializer, TeacherSerializer, ClassroomSerializer, LessonSerializer
 from rest_framework import viewsets
 
 # class TeacherViewSet(viewsets.ModelViewSet):
@@ -43,9 +43,56 @@ from rest_framework import viewsets
 
 
 class SchoolViewSet(viewsets.ModelViewSet):
-    queryset = School.objects.all()
     serializer_class = SchoolSerializer
+    def get_queryset(self):
+
+        queryset = School.objects.all()
+        user = self.request.query_params.get('user', None)
+        if user is not None:
+            queryset = queryset.filter(user=user)
+        return queryset
 
 class TeacherViewSet(viewsets.ModelViewSet):
-    queryset = Teacher.objects.all()
     serializer_class = TeacherSerializer
+    def get_queryset(self):
+
+        queryset = Teacher.objects.all()
+        school_id = self.request.query_params.get('school_id', None)
+        if school_id is not None:
+            queryset = queryset.filter(school_id=school_id)
+        return queryset
+
+
+class ClassroomViewSet(viewsets.ModelViewSet):
+    serializer_class = ClassroomSerializer
+    def get_queryset(self):
+
+        queryset = Classroom.objects.all()
+        teacher_id = self.request.query_params.get('teacher_id', None)
+        if teacher_id is not None:
+            queryset = queryset.filter(teacher_id=teacher_id)
+        return queryset
+
+
+class LessonViewSet(viewsets.ModelViewSet):
+    serializer_class = LessonSerializer
+    def post_queryset(self):
+
+        queryset = Lesson.objects.all()
+        classroom_id = self.request.query_params.get('classroom_id', None)
+        if classroom_id is not None:
+            queryset = queryset.filter(classroom_id=classroom_id)
+        return queryset
+
+
+# @api_view(['POST'])
+# def teacher_by_school(request):
+#     school_id = request.data['id']
+#     teachers = Teacher.objects.filter(school_id=school_id)
+#     print(teachers[0].first_name)
+#     data=[]
+#     for teacher in teachers:
+#         data.append(model_to_dict(teacher))
+#     print(data)
+
+#     return Response(data)

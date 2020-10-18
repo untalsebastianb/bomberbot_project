@@ -3,7 +3,7 @@ import React from 'react'
 import Typography from '@material-ui/core/Typography';
 import '../assets/styles/components/DescriptionSchool.scss'
 
-const DescriptionSchool = () => {
+const DescriptionSchool = (props) => {
     return (
       <div className="Description">
       <div className="ImageLeft">
@@ -11,7 +11,7 @@ const DescriptionSchool = () => {
       </div>
       <div className="DescriptionRight">
       <Typography variant='h4' className="SchoolName">
-        School Name
+        { props.name }
       </Typography>
       <p className="SchoolDescription">Lorem impsum adnad adnaidas anasmn ainaisdnasidnasi</p>
       </div>

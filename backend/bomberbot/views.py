@@ -14,9 +14,11 @@ from bomberbot.models import School
 
 @login_required
 def home_view(request):
-    logged_user = request.user
+    logged_user = request.user.id
+    school = School.objects.get(user_id=logged_user)
     response = render(request, 'index.html')
     response.set_cookie('user', logged_user)
+    response.set_cookie('school_id', school.id)
     return response
 
 def login_view(request):
