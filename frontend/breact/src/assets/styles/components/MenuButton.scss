@@ -1,11 +1,9 @@
 
 .Oval {
 box-sizing: border-box;
-display: flex;
-align-items: center;
-justify-content: flex-start;
 width: 70%;
 height: 15%;
+display: flex;
 // margin: 10% auto;
 box-shadow: 10px 10px 20px 0 #0f1533, -10px -10px 20px 0 #061145;
 border: solid 1px #061145;
@@ -16,10 +14,17 @@ font-size: 1vw;
 color: #ffffff;
 }
 
+.Oval a {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
 .icons {
 height: auto;
 max-width: 20%;
-margin: 5% 10%;
+margin: 5% 15px;
 }
 
 .Oval:hover {
