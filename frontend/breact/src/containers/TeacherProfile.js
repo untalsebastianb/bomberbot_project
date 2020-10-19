@@ -4,6 +4,7 @@ import InfoTeacher from '../components/InfoTeacher'
 import '../assets/styles/components/TeacherProfile.scss'
 import Typography from '@material-ui/core/Typography';
 
+
 // containaer for teacher profile view
 const TeacherProfile = () => {
   return (
@@ -14,6 +15,8 @@ const TeacherProfile = () => {
       <hr className="Title"/>
       <DescriptionTeacher />
       <InfoTeacher />
+
+
     </div>
   )
 }
