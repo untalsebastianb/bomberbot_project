@@ -85,8 +85,8 @@ class LessonViewSet(viewsets.ModelViewSet):
         return queryset
 
 
-@api_view(['POST'])
-def teacher_by_school(request):
+@api_view(['GET'])
+def GeneralReport(request):
     school_id = request.data['id']
     school_info = School.objects.filter(id=school_id)
 
@@ -135,4 +135,8 @@ def teacher_by_school(request):
 
     return Response(data)
 
-    
+@api_view(['GET'])
+def TeacherReport(request):
+        school_id = request.data
+        print(school_id)
+        return Response('data')
