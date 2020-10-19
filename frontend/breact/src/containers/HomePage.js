@@ -6,7 +6,7 @@ function HomePage() {
     return (
         <div className='HomePage'> 
             <div id='Logo-Bomberbot'>
-                <img src={logo} alt='Icons'></img>
+                <img src={logo} alt='Icons' />
             </div>
             <div id='Welcome'>
                 <h3>Welcome to Bomberbot school manager</h3>
