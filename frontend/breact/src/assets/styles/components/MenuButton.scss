@@ -3,20 +3,23 @@
 box-sizing: border-box;
 display: flex;
 align-items: center;
-justify-content: center;
-width: 50px;
-height: 50px;
+justify-content: flex-start;
+width: 70%;
+height: 15%;
 // margin: 10% auto;
 box-shadow: 10px 10px 20px 0 #0f1533, -10px -10px 20px 0 #061145;
 border: solid 1px #061145;
-border-radius: 50%;
+border-radius: 5%;
 background-color: #181e47;
 cursor: pointer;
+font-size: 1vw;
+color: #ffffff;
 }
 
 .icons {
 height: auto;
-max-width: 60%;
+max-width: 20%;
+margin: 5% 10%;
 }
 
 .Oval:hover {

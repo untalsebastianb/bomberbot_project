@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from '../components/Layout'
-//import HomePage from '../containers/HomePage'
-import TeacherProfile from '../containers/TeacherProfile'
-import TeachersManager from '../containers/TeachersManager'
+import HomePage from '../containers/HomePage'
+// import TeacherProfile from '../containers/TeacherProfile'
+// import TeachersManager from '../containers/TeachersManager'
 //import Comunication from '../containers/Comunications'
 import '../assets/styles/App.scss'
 // import BuyLicenses from '../containers/BuyLicenses'
@@ -10,9 +10,9 @@ import '../assets/styles/App.scss'
 const App = () => (
 <>
 <Layout>
-    {/*<HomePage />*/}
+    <HomePage />
     {/* <TeacherProfile /> */}
-    <TeachersManager />
+    {/* <TeachersManager /> */}
     {/*<Comunication/>*/}
     {/* <BuyLicenses /> */}
 </Layout>

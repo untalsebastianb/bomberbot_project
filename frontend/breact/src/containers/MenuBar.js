@@ -17,11 +17,11 @@ function MenuBar() {
         <StatusLicense/>
       </MenuInfo>
       <MenuOptions>
-        <MenuButton icons={school_icon}/>
-        <MenuButton icons={teacher_icon}/>
-        <MenuButton icons={comunications_icon}/>
-        <MenuButton icons={buy_icon}/>
-        <MenuButton icons={exit_icon}/>
+        <MenuButton icons={school_icon} text="School"/>
+        <MenuButton icons={teacher_icon} text="Teachers"/>
+        <MenuButton icons={comunications_icon} text="Mails"/>
+        <MenuButton icons={buy_icon} text="Licenses"/>
+        <MenuButton icons={exit_icon} text="Exit"/>
       </MenuOptions>
       <div className="contact-us">
         <p id='Call-us'> Call us today!<br/>+31 (0)20 894 3044</p>
