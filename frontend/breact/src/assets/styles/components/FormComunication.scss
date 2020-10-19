@@ -50,7 +50,7 @@
    opacity: 90%;
 
 }
-.block-message textarea{
+.block-message textarea , .text-response{
     height: 85%;
     border: none;
     width: 98%;
@@ -58,7 +58,11 @@
     outline: none;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     resize: none;
-
-    
-
 }
+
+.text-response{
+    text-align: center;
+    font-weight: bold;
+}
+
+
