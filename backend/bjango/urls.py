@@ -3,6 +3,10 @@ from django.urls import path, include
 from bomberbot import views as login_views
 # from bomberbot.api_views import SchoolAPI, TeacherView, TeachersView
 from bomberbot.api_views import SchoolViewSet, TeacherViewSet, ClassroomViewSet, LessonViewSet
+from bomberbot.api_views import teacher_by_school
+
+
+
 from rest_framework import routers
 
 router = routers.DefaultRouter()
@@ -21,7 +25,7 @@ urlpatterns = [
     path('logout/', login_views.logout_view, name='logout'),
     path('signup/', login_views.signup_view, name='signup'),
     
-    # path('teacher/', teacher_by_school, name='tea'),
+    path('api/general_report/', teacher_by_school, name='info'),
 
 
 
