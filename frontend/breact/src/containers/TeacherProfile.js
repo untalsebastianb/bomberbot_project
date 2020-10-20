@@ -10,17 +10,20 @@ import useTeacherInfo from '../hooks/useTeacherInfo.js'
 const TeacherProfile = (props) => {
   const teacherId = props.match.params.id
   const API = `http://127.0.0.1:8000/api/teacher_by_id/?id=${teacherId}`
-  console.log(API)
   const teacherInfo = useTeacherInfo(API)
   console.log(teacherInfo)
+  console.log(typeof teacherInfo)
+  let {email, score} = teacherInfo
+  console.log(email, score)
+
   return (
     <div className='teacherProfile'>
       <Typography variant='h3'>
         Teacher Profile
       </Typography>
       <hr className="Title"/>
-      <DescriptionTeacher />
-      <InfoTeacher />
+      <DescriptionTeacher {...teacherInfo}/>
+      <InfoTeacher {...teacherInfo} />
 
 
     </div>
