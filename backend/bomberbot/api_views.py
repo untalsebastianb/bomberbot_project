@@ -135,6 +135,14 @@ def GeneralReport(request):
 
     return Response(data)
 
+
+@api_view(['GET'])
+def Teacher_By_Id(request):
+        teacher_id = request.GET.get('id')
+        teacher = Teacher.objects.filter(id=teacher_id)
+        return Response(teacher.values())
+
+
 @api_view(['GET'])
 def TeacherReport(request):
         school_id = request.GET.get('id')
