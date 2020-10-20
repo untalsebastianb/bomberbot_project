@@ -10,7 +10,6 @@ import useInitialState from '../hooks/schoolInformation.js';
 const SchoolProfile = () => {
   const cK = (document.cookie).split('user=')[1].split(';')[0];
   const API = 'http://127.0.0.1:8000/api/schools/?user=' + cK;
-  // const API = 'http://127.0.0.1:8000/api/schools/?user=';
   const teacher = useInitialState(API);
   console.log(teacher)
   return (

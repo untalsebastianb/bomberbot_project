@@ -1,11 +1,14 @@
 import ReactToPrint from 'react-to-print';
 import React, { useRef } from 'react'
 import '../assets/styles/components/TeacherProfile.scss'
+import GeneralReport from '../components/GeneralReport'
 
 class ComponentToPrint extends React.Component {
     render() {
       return (
-        <div>aqui van los componentes para el reporte general a</div>
+        <div>
+          <GeneralReport />
+        </div>
       );
     }
   }
