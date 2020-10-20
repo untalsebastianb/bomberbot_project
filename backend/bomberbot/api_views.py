@@ -145,7 +145,41 @@ def Teacher_By_Id(request):
 
 @api_view(['GET'])
 def TeacherReport(request):
-        school_id = request.GET.get('id')
-      
-        return Response(school_id)
+    num_students = 0
+
+    school_id = request.GET.get('school_id')
+    teacher_id = request.GET.get('teacher_id')
+    teacher = Teacher.objects.filter(school_id=school_id).filter(id=teacher_id)
+    
+    score_by_lesson = {}
+    score_by_classroom = {}
+    lessons_score = {}
+    classrooms = {}
+    average_classroom_score = 0
+    total_score = 0
+
+    teacher_classroom = Classroom.objects.filter(teacher_id=teacher_id)
+    for classroom in teacher_classroom:
+        num_students += classroom.num_students
+        lessons = Lesson.objects.filter(classroom_id=classroom.id)
+        for lesson in lessons:
+            total_score += lesson.average_score
+            lessons_score[lesson.name] = lesson.average_score
+        average_classroom_score = total_score / len(lessons)
+
+        classrooms[classroom.name] = {
+            'score': lessons_score,
+            'total_students': classroom.num_students,
+            'average_score': average_classroom_score
+        }
+        lessons_score = {}
+        average_classroom_score = 0
+        total_score = 0
+
+    data = {
+        'general_information': teacher.values()[0],
+        'total_students': num_students,
+        'classrooms': classrooms
+    }
+    return Response(data)
 
