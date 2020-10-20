@@ -1,6 +1,6 @@
 import React from 'react'
 import TeachersList from '../components/TeachersList'
-import useInitialState from '../hooks/useInitialState.js'
+import useInitialState from '../hooks/useInitialState.js';
 import '../assets/styles/components/TeachersManager.scss'
 import '../assets/styles/components/Buttonplus.scss'
 import Typography from '@material-ui/core/Typography';
@@ -8,11 +8,16 @@ import SearchBar from '../components/SearchBar'
 import { Link } from 'react-router-dom'
 
 
-const API = 'http://localhost:3000/initalState'
 
 const TeacherManager = () => {
-  const teacher = useInitialState(API);
-  console.log(teacher)
+  const school_id = document.cookie
+  .split('; ')
+  .find(row => row.startsWith('school_id'))
+  .split('=')[1];
+
+const API = `http://127.0.0.1:8000/api/teacher/?school_id=${school_id}`
+  const teachers = useInitialState(API);
+  console.log('Teacher listsss', teachers)
   return (
     <div className='teacherList'>
       <Typography variant='h3'>
@@ -22,16 +27,17 @@ const TeacherManager = () => {
       <SearchBar/>
       <br></br>
       {
-        teacher.teachers?.length > 0 &&
+        teachers?.length > 0 &&
         <>
             {
-              teacher.teachers?.map(item => 
+              teachers?.map(item => {
+                return (
                 <TeachersList key={item.id} {...item} />
-                )}
-            </>
+                )
+              })
+            }
+        </>
       }
-
-      <Link className="Button" to='/teacher_profile'>dsf</Link>
     </div>
   )
 }
