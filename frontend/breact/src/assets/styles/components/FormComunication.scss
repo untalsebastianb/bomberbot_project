@@ -8,6 +8,8 @@
     border: solid 2px #aeb7f2;
     background-color: #fefefe;
     align-items: center;
+    padding: 1%;
+
 }
 .block-init{
     width: 95%;
@@ -15,11 +17,9 @@
     flex-direction: row;
     
 }
+
 .block-input input{
     width: 95%;
-
-}
-.block-input input{
     border:none;   
     outline: none;
 }
@@ -37,6 +37,7 @@
     width: 92%;
     height: 18rem;
     margin:2%;
+    padding: 1%;
     border-radius: 8px;
     box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
     border: solid 2px #aeb7f2;
@@ -58,7 +59,7 @@
 }
 
 .block-message button:hover{
-   opacity: 90%;
+    opacity: 90%;
 
 }
 .block-message textarea , .text-response{

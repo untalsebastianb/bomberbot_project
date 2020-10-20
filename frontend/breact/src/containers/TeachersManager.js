@@ -23,6 +23,7 @@ const API = `http://127.0.0.1:8000/api/teacher/?school_id=${school_id}`
       <Typography variant='h3'>
         Teachers Manager
       </Typography>
+      <hr className="Title"/>
       <br></br>
       <SearchBar/>
       <br></br>
