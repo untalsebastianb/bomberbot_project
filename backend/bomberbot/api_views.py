@@ -98,7 +98,7 @@ def GeneralReport(request):
     num_classrooms_by_teacher = 0
     num_students_by_teacher = 0
     score_by_teacher = 0
-    teacher_data = {}
+    teacher_data = []
     num_students = 0
 
     for teacher in teachers:
@@ -107,6 +107,7 @@ def GeneralReport(request):
             # num_lessons_by_classroom[str(classroom.id)] = (len(Lesson.objects.filter(classroom_id=classroom.id)))
             num_lessons_by_teacher += (len(Lesson.objects.filter(classroom_id=classroom.id)))
             num_students += classroom.num_students
+        name_teacher = teacher.first_name + ' ' + teacher.last_name
         num_students_by_teacher = num_students
         score_by_teacher = teacher.score
         num_classrooms_by_teacher = (len(Classroom.objects.filter(teacher_id=teacher.id)))
@@ -114,12 +115,14 @@ def GeneralReport(request):
         
         age += teacher.age
 
-        teacher_data[str(teacher.id)] = {
+        teacher_fields = {
+            'name': name_teacher,
             'num_students_by_teacher': num_students_by_teacher,
             'score_by_teacher': score_by_teacher,
             'num_classrooms_by_teacher': num_classrooms_by_teacher,
             'num_lessons_by_teacher': num_lessons_by_teacher
         }
+        teacher_data.append(teacher_fields)
         num_lessons_by_teacher = 0
 
 
