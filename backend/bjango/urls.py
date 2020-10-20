@@ -3,7 +3,7 @@ from django.urls import path, include
 from bomberbot import views as login_views
 # from bomberbot.api_views import SchoolAPI, TeacherView, TeachersView
 from bomberbot.api_views import SchoolViewSet, TeacherViewSet, ClassroomViewSet, LessonViewSet
-from bomberbot.api_views import teacher_by_school
+from bomberbot.api_views import GeneralReport, TeacherReport, Teacher_By_Id
 
 
 
@@ -25,7 +25,9 @@ urlpatterns = [
     path('logout/', login_views.logout_view, name='logout'),
     path('signup/', login_views.signup_view, name='signup'),
     
-    path('api/general_report/', teacher_by_school, name='info'),
+    path('api/general_report/', GeneralReport, name='general_report'),
+    path('api/teacher_report/', TeacherReport, name='teacher_report'),
+    path('api/teacher_by_id/', Teacher_By_Id, name='teacher_by_id'),
 
 
 

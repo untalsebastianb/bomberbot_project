@@ -20,14 +20,18 @@ export default function ContactUs() {
     return(   
     <form onSubmit={sendEmail}>
        <div className="block-input">
-            <input type="text" id="to" placeholder="To" name="email" onClick="cleanMessage()"></input>
+            <div className="block-init">
+                <input type="text" id ="Email" placeholder="Email" name="email"></input>
+                <input type="text" id ="to-name" placeholder="To Name" name="to_name"></input>
+            </div>
             <input type="text" placeholder="Subject" name="subject"></input>
+            
         </div>
         <div className="block-message">
-            <textarea id="story" name="message" rows="5" cols="33" placeholder="Your message" onClick="cleanMessage()"></textarea>
+            <textarea id="story" name="message" rows="5" cols="33" placeholder="Your message"></textarea>
             <button type="submit">Send</button>
         </div>
-        <div id="text-response" class="text-response" onClick="cleanMessage()"></div>
+        <div id="text-response" class="text-response"></div>
         
     </form>
     );
