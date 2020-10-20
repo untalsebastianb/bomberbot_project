@@ -5,7 +5,7 @@ const useTeacherInfo = (API) => {
   useEffect(() => {
     fetch(API)
       .then(response => response.json())
-      .then(data => setTeacher(data))
+      .then(data => setTeacher(data[0]))
   }, [])
   return teacher
 }
