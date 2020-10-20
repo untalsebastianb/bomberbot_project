@@ -5,7 +5,7 @@ from django.db.utils import IntegrityError
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from bomberbot.models import School
-
+# from bomberbot.forms import SchoolFormImage
 
 ################################################################
 #################login views####################################
@@ -47,6 +47,7 @@ def signup_view(request):
         username = request.POST['username']
         password = request.POST['password']
         password_confirm = request.POST['password_confirmation']
+        
         # validacion del pass confirm
         if password != password_confirm:
             error = 'The passwords do not match.'
@@ -67,12 +68,16 @@ def signup_view(request):
         try:
             user = User.objects.create_user(username=username, password=password)
             user.save()
+            # school = SchoolFormImage(request.FILES)
+            # school.user = user
             school = School(user=user)
-
+            school.picture = request.FILES.get('picture')
             school.name = request.POST['schoolname']
             school.email = email
             school.country = request.POST['country']
             school.address = request.POST['address']
+            school.postal_code = request.POST['postcode']
+            school.city = request.POST['city']
             school.phone = request.POST['phone']
             # falta la foto!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             school.save()
