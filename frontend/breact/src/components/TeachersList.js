@@ -6,9 +6,9 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton'
-import VisibilityIcon from '@material-ui/icons/Visibility';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import { Link } from 'react-router-dom'
+import '../assets/styles/components/TeachersManager.scss'
 
 
 

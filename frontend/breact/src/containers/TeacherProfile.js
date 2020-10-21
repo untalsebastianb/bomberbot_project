@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import useTeacherInfo from '../hooks/useTeacherInfo.js'
 
 
+
 // containaer for teacher profile view
 const TeacherProfile = (props) => {
   const teacherId = props.match.params.id
@@ -18,7 +19,7 @@ const TeacherProfile = (props) => {
 
   return (
     <div className='teacherProfile'>
-      <Typography variant='h3'>
+      <Typography variant='h2'>
         Teacher Profile
       </Typography>
       <hr className="Title"/>

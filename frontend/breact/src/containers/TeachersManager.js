@@ -31,7 +31,7 @@ const TeacherManager = () => {
 
   return (
     <div className='teacherList'>
-      <Typography variant='h3'>
+      <Typography variant='h2'>
         Teachers Manager
       </Typography>
       <hr className="Title"/>
