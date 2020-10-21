@@ -24,7 +24,7 @@ const GeneralReport = (props) => {
         <tr className="GlobalValues">
             <td>{ report.num_students }</td>
             <td>{ report.num_teachers }</td>
-            <td>{ report.score_by_teacher }</td>
+            <td>{ report.average_score }</td>
             <td>{ report.teacher_average_age }</td>
         </tr>
         </table>

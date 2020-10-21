@@ -98,6 +98,7 @@ def GeneralReport(request):
     num_classrooms_by_teacher = 0
     num_students_by_teacher = 0
     score_by_teacher = 0
+    total_score = 0
     teacher_data = []
     num_students = 0
 
@@ -110,6 +111,7 @@ def GeneralReport(request):
         name_teacher = teacher.first_name + ' ' + teacher.last_name
         num_students_by_teacher = num_students
         score_by_teacher = teacher.score
+        total_score += teacher.score
         num_classrooms_by_teacher = (len(Classroom.objects.filter(teacher_id=teacher.id)))
         num_students = 0
         
@@ -128,11 +130,12 @@ def GeneralReport(request):
 
         num_students_by_teacher
     average_age = age / len(teachers)
+    average_score = round(total_score / len(teachers), 2)
     data = {
         'num_teachers' : len(teachers),
         'num_students' : school_info[0].num_students,
         'teacher_average_age': average_age,
-        'score_by_teacher': score_by_teacher,
+        'average_score': average_score,
         'teacher_data': teacher_data
     }
 
