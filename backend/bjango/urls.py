@@ -1,10 +1,12 @@
 from django.contrib import admin
 from django.urls import path, include
 from bomberbot import views as login_views
-# from bomberbot.api_views import SchoolAPI, TeacherView, TeachersView
 from bomberbot.api_views import SchoolViewSet, TeacherViewSet, ClassroomViewSet, LessonViewSet
 from bomberbot.api_views import GeneralReport, TeacherReport, Teacher_By_Id
 
+# images
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 from rest_framework import routers
@@ -35,4 +37,4 @@ urlpatterns = [
     # path('teachers/<str:pk>/', TeacherView.as_view(), name='teacher'),
     # path('api/create_school', SchoolAPI.as_view(), name='create_school'),
     path('api/', include(router.urls))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

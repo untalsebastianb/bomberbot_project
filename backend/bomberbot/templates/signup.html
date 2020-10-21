@@ -5,48 +5,25 @@
 
 {% block container %}
 
-        {% if error %}
-            <p class="alert alert-danger">{{error}}</p>
-        {% endif %}
-
-    <form method="POST" action="{% url "signup" %}">
+        
+    <h2>Sign up</h2> 
+    <form method="POST" action="{% url "signup" %}" enctype="multipart/form-data" class="form-parent">
         {% csrf_token %}
-
-        <div class="form-group">
-            <input class="form-control" type="text" placeholder="Username" name="username" required="true" />
-        </div>
-        <div class="form-group">
-            <input class="form-control" type="password" placeholder="Password" name="password" required="true" />
-        </div>
-
-        <div class="form-group">
-            <input class="form-control" type="password" placeholder="Password confirmation" name="password_confirmation" required="true" />
-        </div>
-
-        <div class="form-group">
-            <input class="form-control" type="text" placeholder="School Name" name="schoolname" required="true" />
-        </div>
-
-        <div class="form-group">
-            <input class="form-control" type="email" placeholder="Email" name="email" required="true" />
-        </div>
-
-        <div class="form-group">
-            <input class="form-control" type="text" placeholder="Country" name="country" required="true" />
-        </div>
-
-        <div class="form-group">
-            <input class="form-control" type="text" placeholder="Address" name="address" required="true" />
-        </div>
-        
-        <div class="form-group">
-            <input class="form-control" type="text" placeholder="Phone Number" name="phone" required="true" />
-        </div>
-        
-        <!-- falta el campo de la foto -->
-
-        <button class="btn btn-primary btn-block mt-5" type="submit">Sign up</button>
-
+            <input class="input-signup" type="text" placeholder="Username" name="username" required="true" />
+            <input class="input-signup" type="password" placeholder="Password" name="password" required="true" />
+            <input class="input-signup" type="password" placeholder="Password confirmation" name="password_confirmation" required="true" />
+            <input class="input-signup" type="text" placeholder="School Name" name="schoolname" required="true" />
+            <input class="input-signup" type="email" placeholder="Email" name="email" required="true" />
+            <input class="input-signup" type="text" placeholder="Country" name="country" required="true" />
+            <input class="input-signup" type="text" placeholder="City" name="city" required="true" />
+            <input class="input-signup" type="text" placeholder="Address" name="address" required="true" />
+            <input class="input-signup" type="text" placeholder="Post Code" name="postcode" required="true" />
+            <input class="input-signup" type="text" placeholder="Phone Number" name="phone" required="true" />
+            <input type="file" name="picture" id="picture" accept="" data-buttonText="Hello there, pick your files"  class="input-signup">
+            <button class="Rectangle" type="submit">Sign up</button>
     </form>
+    {% if error %}
+            <p class="alert">{{error}}</p>
+        {% endif %}
 
 {% endblock %}
