@@ -5,7 +5,7 @@ import '../assets/styles/components/InfoTeacher.scss'
 import { Link } from 'react-router-dom'
 
 
-const InfoTeacher = ({email, address, phone, age, score}) => {
+const InfoTeacher = ({email, address, phone, age, score, id}) => {
     
     
     return (
@@ -17,7 +17,7 @@ const InfoTeacher = ({email, address, phone, age, score}) => {
           <li className="PostCode">Score: {score}</li>
           <li className="Email">E-mail: {email}</li>
           <li className="Telephone">Telephone: {phone}</li>
-          <Link className="Button" to='/teacher_report'/>
+          <Link className="Button" to={`/teacher_report/${id}`}/>
 
         </ul>
       </div>
