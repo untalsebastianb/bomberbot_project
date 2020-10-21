@@ -9,12 +9,23 @@ import StatusLicense from '../components/StatusLicense';
 import MenuOptions from '../components/MenuOptions';
 import MenuInfo from '../components/MenuInfo';
 import MenuButton from '../components/MenuButton';
+import useInfoMenu from '../hooks/useInfoMenu.js'
 
 
 function MenuBar() {
+  
+  const school_id = document.cookie
+  .split('; ')
+  .find(row => row.startsWith('user'))
+  .split('=')[1];
+
+  const API = `http://127.0.0.1:8000/api/schools/?user=${school_id}`
+  const schoolData = useInfoMenu(API)
+  console.log(schoolData)
+
   return (
     <div className='menu'>
-      <MenuInfo>
+      <MenuInfo {...schoolData}>
         <StatusLicense/>
       </MenuInfo>
       <MenuOptions>

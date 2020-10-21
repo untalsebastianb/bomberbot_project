@@ -2,7 +2,7 @@ import React from 'react';
 import '../assets/styles/components/MenuInfo.scss'
 import { Link } from 'react-router-dom'
 
-function MenuInfo({children}) {
+function MenuInfo({children, name}) {
     return (
       <div className='info'>
         <Link to='/home'>
@@ -11,7 +11,7 @@ function MenuInfo({children}) {
           <p>Home</p>
         </div>
         </Link>
-        <p id='Name-School'>Hamtons School</p>
+        <p id='Name-School'>{name}</p>
         {children}
       </div>
     )
