@@ -52,7 +52,7 @@ export default function TeachersList({first_name, email, picture, id}) {
                   />
                   <Link to={`/teacher_profile/${id}`}>
                   <IconButton aria-label='see the profile'>
-                    <AddCircleIcon color='secondary'/>
+                    <AddCircleIcon color='primary'/>
                   </IconButton>
                   </Link>
                 </ListItem>
