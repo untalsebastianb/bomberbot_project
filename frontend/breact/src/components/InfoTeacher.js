@@ -17,7 +17,9 @@ const InfoTeacher = ({email, address, phone, age, score, id}) => {
           <li className="PostCode">Score: {score}</li>
           <li className="Email">E-mail: {email}</li>
           <li className="Telephone">Telephone: {phone}</li>
-          <Link className="Button" to={`/teacher_report/${id}`}/>
+          <Link className="Button" to={`/teacher_report/${id}`}>
+            <p>Download Report</p>
+          </Link>
 
         </ul>
       </div>
