@@ -159,8 +159,7 @@ def TeacherReport(request):
     
     score_by_lesson = {}
     score_by_classroom = {}
-    lessons_score = {}
-    classrooms = {}
+    classrooms = []
     average_classroom_score = 0
     total_score = 0
 
@@ -168,22 +167,25 @@ def TeacherReport(request):
     for classroom in teacher_classroom:
         num_students += classroom.num_students
         lessons = Lesson.objects.filter(classroom_id=classroom.id)
+        num_lessons = 0
         for lesson in lessons:
             total_score += lesson.average_score
-            lessons_score[lesson.name] = lesson.average_score
+            num_lessons += 1
         average_classroom_score = total_score / len(lessons)
 
-        classrooms[classroom.name] = {
-            'score': lessons_score,
+        classrooms.append({
+            'name': classroom.name,
+            'lessons': num_lessons,
             'total_students': classroom.num_students,
             'average_score': average_classroom_score
-        }
+        })
         lessons_score = {}
         average_classroom_score = 0
         total_score = 0
 
     data = {
-        'general_information': teacher.values()[0],
+        'name': teacher.values()[0]['first_name'] + ' ' + teacher.values()[0]['last_name'],
+        'score': teacher.values()[0]['score'],
         'total_students': num_students,
         'classrooms': classrooms
     }
