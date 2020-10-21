@@ -22,12 +22,13 @@
         max-width: 100%;
         display: block;
         margin-top: auto;
+        margin-left: 2%;
         margin-bottom: auto;
         .SchoolName {
-            font-size: 48px;
+            font-size: $header-font;
         }
         .SchoolDescription {
-            font-size: 18px;
+            font-size: $standard-font;
             color: #5b5656;
         }
     }

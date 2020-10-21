@@ -20,7 +20,7 @@ const API = `http://127.0.0.1:8000/api/teacher/?school_id=${school_id}`
   console.log('Teacher listsss', teachers)
   return (
     <div className='teacherList'>
-      <Typography variant='h3'>
+      <Typography variant='h2'>
         Teachers Manager
       </Typography>
       <br></br>

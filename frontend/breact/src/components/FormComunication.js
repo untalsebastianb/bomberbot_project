@@ -14,7 +14,7 @@ export default function ContactUs() {
             document.getElementById('text-response').innerHTML =("Message sent");
         }, (error) => {
             console.log(error.text);
-            document.getElementById('text-response').innerHTML =("Message not sent");
+            document.getElementById('text-response').innerHTML =("Sorry we couldn't sent your message :(");
         });
     }
     return(   
