@@ -46,7 +46,7 @@ class SchoolViewSet(viewsets.ModelViewSet):
     serializer_class = SchoolSerializer
     def get_queryset(self):
 
-        queryset = School.objects.all()
+        queryset = School.objects.all().order_by('name')
         user = self.request.query_params.get('user', None)
         if user is not None:
             queryset = queryset.filter(user=user)
@@ -56,7 +56,7 @@ class TeacherViewSet(viewsets.ModelViewSet):
     serializer_class = TeacherSerializer
     def get_queryset(self):
 
-        queryset = Teacher.objects.all()
+        queryset = Teacher.objects.all().order_by('first_name')
         school_id = self.request.query_params.get('school_id', None)
         if school_id is not None:
             queryset = queryset.filter(school_id=school_id)
@@ -67,7 +67,7 @@ class ClassroomViewSet(viewsets.ModelViewSet):
     serializer_class = ClassroomSerializer
     def get_queryset(self):
 
-        queryset = Classroom.objects.all()
+        queryset = Classroom.objects.all().order_by('name')
         teacher_id = self.request.query_params.get('teacher_id', None)
         if teacher_id is not None:
             queryset = queryset.filter(teacher_id=teacher_id)
@@ -78,7 +78,7 @@ class LessonViewSet(viewsets.ModelViewSet):
     serializer_class = LessonSerializer
     def get_queryset(self):
 
-        queryset = Lesson.objects.all()
+        queryset = Lesson.objects.all().order_by('name')
         classroom_id = self.request.query_params.get('classroom_id', None)
         if classroom_id is not None:
             queryset = queryset.filter(classroom_id=classroom_id)
