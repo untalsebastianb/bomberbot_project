@@ -13,7 +13,7 @@ const InfoSchool = (props) => {
           <li className="Country">Country: { props.fields['country'] }</li>
           <li className="City">City: { props.fields['city'] }</li>
           <li className="Address">Address: { props.fields['address'] }</li>
-          <li className="PostCode">Post code: </li>
+          <li className="PostCode">Postal code: { props.fields['postal_code']}</li>
           <li className="Email">E-mail: { props.fields['email'] }</li>
           <li className="Telephone">Telephone: { props.fields['phone'] }</li>
           {/* <div className="Button" onClick={ status }></div> */}
