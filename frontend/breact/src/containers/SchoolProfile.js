@@ -14,7 +14,7 @@ const SchoolProfile = () => {
   console.log(teacher)
   return (
     <div className='schoolProfile'>
-      <Typography variant='h3'>
+      <Typography variant='h2'>
         School Profile
       </Typography>
       <hr className="Title"/>

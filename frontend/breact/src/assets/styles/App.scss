@@ -6,15 +6,21 @@ body {
     resize: vertical ;
 }
 
+html {
+    font-size: 62.5%;
+}
+
+
+
 #app > .parent-container {
     display: grid;
     grid-template-columns: 15% 85%;
 }
 
 .right-container {
-    margin: 5% 4% 0 4%;
+    margin: 2% 4% 0 4%;
     box-sizing: border-box;
-    height: 100vh;
+    height: 100%;
 }
 
 .Logo-bomberbot {

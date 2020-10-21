@@ -9,8 +9,8 @@ function HomePage() {
                 <img src={logo} alt='Icons' />
             </div>
             <div id='Welcome'>
-                <h3>Welcome to Bomberbot school manager</h3>
-                <h4>Select an option to continue</h4>
+                <h3>Welcome to Bomberbot School Manager</h3>
+                <h4>Please select an option to continue</h4>
             </div>
         </div>
     )
