@@ -16,8 +16,7 @@
 .block-init{
     width: 95%;
     display: flex;
-    flex-direction: row;
-    
+    flex-direction: row;   
 }
 
 .block-input input{
@@ -44,7 +43,6 @@
     box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
     border: solid 2px #aeb7f2;
     background-color: #fefefe;
-    
 }
 .block-message button{
     
@@ -77,6 +75,13 @@
 .text-response{
     text-align: center;
     font-weight: bold;
+    font-size: 17px;
+}
+.confirmation{
+    color: #3069f4;
+}
+.alert{
+    color: red;
 }
 
 
