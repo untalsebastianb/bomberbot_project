@@ -17,7 +17,9 @@ const InfoSchool = (props) => {
           <li className="Email">E-mail: { props.fields['email'] }</li>
           <li className="Telephone">Telephone: { props.fields['phone'] }</li>
           {/* <div className="Button" onClick={ status }></div> */}
-          <Link className="Button" to='/general_report'/>
+          <Link className="Button" to='/general_report'>
+            <p>Download Report</p>
+          </Link>
         </ul>
       </div>
     );
