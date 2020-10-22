@@ -82,26 +82,23 @@ export default function ContactUs() {
     }
     return(  
     <div className="mail">
-    <div className='mail_container'>
-      
-    <form onSubmit={sendEmail}>
-       <div className="block-input">
-            <div className="block-init">
-
-              <input type="text" id ="Email" list='list' placeholder="Email" name="email" onChange={handleTeacher2}></input>
-              <datalist id='list'>
-              {
-                  filtered_teachers?.map(item => {
-                    return (
+      <div className='mail_container'>
+        <form onSubmit={sendEmail}>
+          <div className="block-input">
+          <div className="block-init">
+            <input type="text" id ="Email" list='list' placeholder="Email" name="email" onChange={handleTeacher2}></input>
+            <datalist id='list'>
+            {
+              filtered_teachers?.map(item => {
+              return (
                       <option key={item.id} >{item.first_name + " " + item.email}</option>  
                       )
                     })
               }
               </datalist>
-
-                <input type="text" id ="to-name" placeholder="To Name" name="to_name"></input>
-            </div>
-            <input type="text" id="subject" placeholder="Subject" name="subject"></input>
+              <input type="text" id ="to-name" placeholder="To Name" name="to_name"></input>
+          </div>
+              <input type="text" id="subject" placeholder="Subject" name="subject"></input>
             
         </div>
         <div className="block-message">
@@ -111,11 +108,11 @@ export default function ContactUs() {
         <div id="text-response" class="text-response"></div>
     </form>
     </div>
-      <div>
+      <div class="email-contacs">
 
      {/* <SearchBar/> */}
      <div className="search-container">
-      <form onSubmit={handleSearch}>
+        <form onSubmit={handleSearch}>
         <input
           type="text"
           placeholder='Search a teacher'
@@ -123,7 +120,7 @@ export default function ContactUs() {
           value={ teacherToSearch }
           onChange={ handleInputChange }
           />
-      </form>
+        </form>
       
       <span className='search-icon'></span>
     </div>
@@ -131,7 +128,7 @@ export default function ContactUs() {
     <br></br>
       {
         filtered_teachers?.length > 0 &&
-        <>
+        <div class="email-teachers">
             {
               filtered_teachers?.map(item => {
                 return (
@@ -139,7 +136,7 @@ export default function ContactUs() {
                   )
                 })
               }
-        </>
+        </div>
       }
 
       </div>
