@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     width: 92%;
+    font-size: 30vh;
     margin:2%;
     border-radius: 8px;
     box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
@@ -23,6 +24,7 @@
     width: 95%;
     border:none;   
     outline: none;
+    font-size: 1.5vh;
 }
 #Email, #to-name{
     border-bottom: solid 1px #aeb7f2;
@@ -36,6 +38,7 @@
     display: flex;
     flex-direction: column;
     width: 92%;
+    font-size: 1.7vh;
     height: 18rem;
     margin:2%;
     padding: 1%;
@@ -44,27 +47,49 @@
     border: solid 2px #aeb7f2;
     background-color: #fefefe;
 }
-.search-container{
+.email-contacs .search-container{
+   
     border: solid 2px #aeb7f2;
+    width: 97.5%;
+    height: 40px;
+}
+.search-container input{
+    border-bottom: solid 2px #aeb7f2;
+    font-size: 1.5vh;
+    width: 100%;
+}
+.search-container form{
+    width: 90%;
+}
+.mail{
+    margin-top: 2%;
+    width: 100%;
+    
+}
+.mail .mail_container{
+    
+   
+    width: 50%;
+}
+.email-contacs{
+    width: 50%;
+    padding-top: 1%;
 }
 .block-message button{
     
-    width: 50px;
+    width: 30%;
     margin-right: 2%;
     height: 25px;
     border: none;
-    border-radius: 10%;
     background-color: #3069f4;
+    border-radius: 8px;
     align-self: flex-end;
     color: white;
+    font-size: 1.5vh;
     font-family: $theme-font;
     cursor: pointer;
 }
 
-.block-message button:hover{
-    opacity: 90%;
-
-}
 .block-message textarea , .text-response{
     height: 85%;
     border: none;
