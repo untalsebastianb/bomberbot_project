@@ -21,6 +21,7 @@ const InfoTeacher = ({email, address, phone, age, score, id}) => {
             <p>Download Report</p>
           </Link>
 
+
         </ul>
       </div>
     );

@@ -4,6 +4,7 @@ import InfoTeacher from '../components/InfoTeacher'
 import '../assets/styles/components/TeacherProfile.scss'
 import Typography from '@material-ui/core/Typography';
 import useTeacherInfo from '../hooks/useTeacherInfo.js'
+import { Link } from 'react-router-dom'
 
 
 

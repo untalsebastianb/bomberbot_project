@@ -13,7 +13,7 @@ import BuyLicenses from '../containers/BuyLicenses'
 import General_to_print from '../reports/generalResportToPrint'
 import Teacher_to_print from '../reports/teacherResportToPrint'
 import TeacherProfile from '../containers/TeacherProfile'
-
+import CreateTeacher from '../containers/CreateTeacher'
 
 const App = () => (
 <>
@@ -28,6 +28,7 @@ const App = () => (
         <Route exact path='/teacher_profile/:id' component={ TeacherProfile } />
         <Route exact path='/general_report' component={ General_to_print } />
         <Route exact path='/teacher_report/:id' component={ Teacher_to_print } />
+        <Route exact path='/create_teacher/:id' component={ CreateTeacher } />
         <Redirect to='/home' />
         
     </Switch>

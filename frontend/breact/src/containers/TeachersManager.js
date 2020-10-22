@@ -9,6 +9,7 @@ import '../assets/styles/components/SearchBar.scss'
 import { useForm } from '../hooks/useForm';
 import { getTeachers } from '../search/getTeachers';
 import useInitialState from '../hooks/useInitialState';
+import { Link } from 'react-router-dom'
 
 
 const TeacherManager = () => {
@@ -69,6 +70,9 @@ const TeacherManager = () => {
             }
         </>
       }
+                <Link to={`/create_teacher/${school_id}`}>
+            <p>Create</p>
+          </Link>
     </div>
   )
 }
