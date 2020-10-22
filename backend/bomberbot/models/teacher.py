@@ -11,6 +11,7 @@ class Teacher(models.Model):
     school_id = models.ForeignKey(School, on_delete=models.CASCADE)
     email = models.EmailField(max_length=30,blank=False, unique=True)
     address = models.CharField(max_length=30,blank=True)
+    city = models.CharField(max_length=30,blank=True)
     score = models.FloatField(blank=True, null=True, default=0)
     # status = models.CharField(default=('A', 'Active') ,max_length=1, choices=TEACHER_STATUS)
     status = models.BooleanField(default=True)
