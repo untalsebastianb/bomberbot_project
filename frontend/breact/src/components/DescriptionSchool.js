@@ -3,15 +3,15 @@ import React from 'react'
 import Typography from '@material-ui/core/Typography';
 import '../assets/styles/components/DescriptionSchool.scss'
 
-const DescriptionSchool = (props) => {
+const DescriptionSchool = ({name, picture}) => {
     return (
       <div className="Description">
       <div className="ImageLeft">
-      <img className="profilePicture" alt="School profile" src="https://images.unsplash.com/photo-1561525962-955e5610601f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"></img>
+      <img className="profilePicture" alt="School profile" src={picture}></img>
       </div>
       <div className="DescriptionRight">
       <Typography variant='h4' className="SchoolName">
-        { props.name }
+        {name}
       </Typography>
       <p className="SchoolDescription">Lorem impsum adnad adnaidas anasmn ainaisdnasidnasi</p>
       </div>
