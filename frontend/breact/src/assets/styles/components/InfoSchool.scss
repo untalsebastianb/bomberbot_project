@@ -4,7 +4,8 @@
         display: grid;
         grid-template-columns: 80% 20%;
         grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
-        grid-gap: 5px;
+        grid-gap: 10px;
+        margin-top: 4%;
         list-style: none;
         font-size: $standard-font;
         color: #5b5656;
