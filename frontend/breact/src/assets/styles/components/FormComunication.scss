@@ -84,4 +84,11 @@
     color: red;
 }
 
+.mail {
+    display: flex;
+    justify-content: space-around;
+}
 
+.mail_container {
+    flex-grow: 2;
+}
