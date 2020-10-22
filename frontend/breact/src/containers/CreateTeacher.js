@@ -34,7 +34,7 @@ const csrftoken = getCookie('csrftoken');
 
 
 const school_id = props.match.params.id
-const [{first_name, last_name, email, address, age, phone, academic_dg, picture}, handleInputChange, handleInputChangeImg] = useForm({
+const [{first_name, last_name, email, address, city, age, phone, academic_dg, picture}, handleInputChange, handleInputChangeImg] = useForm({
     // first_name: 'Emilio2',
     // last_name: 'Facundo',
     // email: 'emi2@gmail.com',
@@ -58,6 +58,7 @@ const handleRegister = (e) => {
     data.append('last_name', last_name)
     data.append('email', email)
     data.append('address', address)
+    data.append('city', city)
     data.append('age', age)
     data.append('phone', phone)
     data.append('academic_dg', academic_dg)
@@ -125,6 +126,16 @@ const handleRegister = (e) => {
                     onChange={handleInputChange}
                 />
 
+                <input 
+                    type="text"
+                    placeholder="City"
+                    name="city"
+                    className=""
+                    // autoComplete="off"
+                    value={city}
+                    onChange={handleInputChange}
+                />
+
                 <input
                     type="text"
                     placeholder="Age"
@@ -146,9 +157,9 @@ const handleRegister = (e) => {
                 />
 
                 <select id='academic_dg' name='academic_dg' onChange={handleInputChange}>
-                    <option value="A"> A </option>
-                    <option value="B"> B </option>
-                    <option value="C"> C </option>
+                    <option value="Professional"> Professional </option>
+                    <option value="Master"> Master </option>
+                    <option value="PhD"> PhD </option>
                 </select>
 
                 <input 
