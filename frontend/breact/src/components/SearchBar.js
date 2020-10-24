@@ -1,6 +1,7 @@
 import React from 'react'
 import '../assets/styles/components/SearchBar.scss'
 import { useForm } from '../hooks/useForm';
+import { Link } from 'react-router-dom';
 
 const SearchBar = () => {
 
@@ -22,8 +23,11 @@ const SearchBar = () => {
           onChange={ handleInputChange }
         />
       </form>
-      
+      <Link to={`/create_teacher/${school_id}`}>
+            <p>Createghgjhgjhgjhgjhgjhgjhgjhghjgjh</p>
+        </Link>
       <span className='search-icon'></span>
+     
     </div>
   )
 }
