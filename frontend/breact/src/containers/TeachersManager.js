@@ -9,7 +9,8 @@ import '../assets/styles/components/SearchBar.scss'
 import { useForm } from '../hooks/useForm';
 import { getTeachers } from '../search/getTeachers';
 import useInitialState from '../hooks/useInitialState';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 
 const TeacherManager = () => {
@@ -32,11 +33,13 @@ const TeacherManager = () => {
 
   return (
     <div className='teacherList'>
-      <Typography variant='h2'>
-        Teachers Manager
-      </Typography>
-      <hr className="Title"/>
+      <div className='title-teachers'>
+        <Typography variant='h2'>
+          Teachers Manager
+        </Typography>
+        <hr className="Title"/>
       <br></br>
+      </div>
 
 {/* ************************************************* */}
       {/* <SearchBar/> */}
@@ -70,9 +73,6 @@ const TeacherManager = () => {
             }
         </>
       }
-                <Link to={`/create_teacher/${school_id}`}>
-            <p>Create</p>
-          </Link>
     </div>
   )
 }

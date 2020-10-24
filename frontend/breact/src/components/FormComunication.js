@@ -106,40 +106,8 @@ export default function ContactUs() {
             <button type="submit">Send</button>
         </div>
         <div id="text-response" class="text-response"></div>
-    </form>
-    </div>
-      <div class="email-contacs">
-
-     {/* <SearchBar/> */}
-     <div className="search-container">
-        <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder='Search a teacher'
-          name='teacherToSearch'
-          value={ teacherToSearch }
-          onChange={ handleInputChange }
-          />
-        </form>
-      
-      <span className='search-icon'></span>
-    </div>
-
-    <br></br>
-      {
-        filtered_teachers?.length > 0 &&
-        <div class="email-teachers">
-            {
-              filtered_teachers?.map(item => {
-                return (
-                  <TeacherListMail key={item.id} handleTeacher={handleTeacher} {...item} />
-                  )
-                })
-              }
-        </div>
-      }
-
+      </form>
       </div>
-    </div>    
-    );
-}
+      </div>
+      
+    );}
