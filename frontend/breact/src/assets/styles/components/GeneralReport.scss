@@ -3,14 +3,33 @@
 }
 .globalTable {
     width: 100%;
-    border: 1px solid black;
+    border: solid 2px #aeb7f2;
     th {
-        border: 1px solid black;
+        border: solid 2px #aeb7f2;
+        font-size: 20px;
     }
     td {
-        border: 1px solid black;
+        border: solid 2px #aeb7f2;
+        text-align: center;
+        height: 25px;
+        font-size: 15px;
     }
 }
+.GlobalHeaders{
+    border: solid 2px #aeb7f2;
+    font-size: 20px;
+}
+.GlobalValues{
+
+        border: solid 2px #aeb7f2;
+        font-size: 20px;
+
+}
+
+.TeacherName{
+    font-size: 37.4px!important;
+}
+
 
 .table1Space {
     margin-bottom: 5%;
@@ -18,11 +37,15 @@
 
 .teachersTable {
     width: 100%;
-    border: 1px solid black;
+    border: solid 2px #aeb7f2;
     th {
-        border: 1px solid black;
+        border: solid 2px #aeb7f2;
+        font-size: 20px;
     }
     td {
-        border: 1px solid black;
+        border: solid 2px #aeb7f2;
+        text-align: center;
+        height: 25px;
+        font-size: 15px;
     }
 }
