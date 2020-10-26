@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import DescriptionSchool from '../components/DescriptionSchool'
 import InfoSchool from '../components/InfoSchool'
 import '../assets/styles/components/SchoolProfile.scss'
+import '../assets/styles/components/CreateTeacher.scss'
 import Typography from '@material-ui/core/Typography';
 import useInitialState from '../hooks/schoolInformation.js';
 import { useForm } from '../hooks/useForm';
@@ -78,19 +79,19 @@ const handleRegister = (e) => {
 }
 
   return (
-    <div>
+    <div class="create-teacher">
       <Typography variant='h2'>
         Create Teacher
       </Typography>
       <hr className="Title"/>
 
-      <form onSubmit={handleRegister} encType="multipart/form-data">
+      <form onSubmit={handleRegister} encType="multipart/form-data" class="form-teacher">
                 
                 <input 
                     type="text"
                     placeholder="First Name"
                     name="first_name"
-                    className=""
+                    className="first-name"
                     // autoComplete="off"
                     value={first_name}
                     onChange={handleInputChange}
@@ -155,8 +156,8 @@ const handleRegister = (e) => {
                     value={phone}
                     onChange={handleInputChange}
                 />
-
-                <select id='academic_dg' name='academic_dg' onChange={handleInputChange}>
+                <div class="degree-and-picture">
+                <select id='academic_dg' name='academic_dg' onChange={handleInputChange} class="selector">
                     <option value="Professional"> Professional </option>
                     <option value="Master"> Master </option>
                     <option value="PhD"> PhD </option>
@@ -167,9 +168,9 @@ const handleRegister = (e) => {
                     id='picture'
                     type="file"
                     name="picture"
-                    className=""
+                    className="photo"
                 />
-
+                </div>
                 <button
                     type="submit"
                     className="btn btn-primary btn-block mb-5"

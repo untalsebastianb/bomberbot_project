@@ -11,6 +11,7 @@ import { getTeachers } from '../search/getTeachers';
 import useInitialState from '../hooks/useInitialState';
 import { Link } from 'react-router-dom';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { Button } from '@material-ui/core';
 
 
 const TeacherManager = () => {
@@ -43,19 +44,23 @@ const TeacherManager = () => {
 
 {/* ************************************************* */}
       {/* <SearchBar/> */}
-      <div className="search-container">
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder='Search a teacher'
-          name='teacherToSearch'
-          value={ teacherToSearch }
-          onChange={ handleInputChange }
-        />
-      </form>
-      
-      <span className='search-icon'></span>
+      <div className="menu-search">
+        <div className="search-container">
+        <form onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder='Search a teacher'
+            name='teacherToSearch'
+            value={ teacherToSearch }
+            onChange={ handleInputChange }
+          />
+        </form> 
+        <span className='search-icon'></span>
     </div>
+    <Link to={`/create_teacher/${school_id}`}>
+            <p class="button-teacher">Create</p>
+          </Link>
+      </div>
 {/* ************************************************* */}
 
       <br></br>
@@ -73,6 +78,7 @@ const TeacherManager = () => {
             }
         </>
       }
+      
     </div>
   )
 }
