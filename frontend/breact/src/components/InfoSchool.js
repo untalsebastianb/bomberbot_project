@@ -2,6 +2,7 @@
 //import { blue } from '@material-ui/core/colors';
 import React from 'react'
 import '../assets/styles/components/InfoSchool.scss'
+import '../assets/styles/components/ButtonEdit.scss'
 import { Link } from 'react-router-dom'
 
 const InfoSchool = (props) => {
@@ -19,6 +20,9 @@ const InfoSchool = (props) => {
           {/* <div className="Button" onClick={ status }></div> */}
           <Link className="Button" to='/general_report'>
             <p>Download Report</p>
+          </Link>
+          <Link className="ButtonEdit" to='/general_report'>
+            <p>Edit School</p>
           </Link>
         </ul>
       </div>
