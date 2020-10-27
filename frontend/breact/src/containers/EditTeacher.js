@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import DescriptionSchool from '../components/DescriptionSchool'
-import InfoSchool from '../components/InfoSchool'
 import '../assets/styles/components/SchoolProfile.scss'
 import '../assets/styles/components/CreateTeacher.scss'
 import Typography from '@material-ui/core/Typography';
-import useInitialState from '../hooks/schoolInformation.js';
 import { useForm } from '../hooks/useForm';
 import useTeacherInfo from '../hooks/useTeacherInfo'
+
  
 
 // containaer for School profile view
@@ -33,9 +31,9 @@ function getCookie(name) {
 
 const csrftoken = getCookie('csrftoken');
 const teacher_id = props.match.params.id
-
 const API = `http://127.0.0.1:8000/api/teacher_by_id/?id=${teacher_id}`
 const teacherInfo = useTeacherInfo(API)
+
 
 
 useEffect(() => {
@@ -85,6 +83,8 @@ const handleRegister = (e) => {
         data.append('picture', picture)
     }
 
+    
+
     fetch(`http://127.0.0.1:8000/api/teacher/${teacher_id}/`, {
         method: 'PUT',
         headers: {
@@ -117,7 +117,7 @@ const handleRegister = (e) => {
         Edit Teacher
       </Typography>
       <hr className="Title"/>
-
+      
       <form onSubmit={handleRegister} encType="multipart/form-data" class="form-teacher">
                 
                 <input 
@@ -215,7 +215,7 @@ const handleRegister = (e) => {
                     type="submit"
                     className="btn btn-primary btn-block mb-5"
                 >
-                    Register
+                    Update
                 </button>
             </form>
                 <div id="teacher_edited" className="text-response"></div>
