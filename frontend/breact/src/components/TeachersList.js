@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function TeachersList({first_name, email, picture, id}) {
+export default function TeachersList({first_name, last_name, email, picture, id}) {
   const classes = useStyles();
   
   return (
@@ -47,7 +47,7 @@ export default function TeachersList({first_name, email, picture, id}) {
                     </Avatar>
                   </ListItemAvatar>
                   <ListItemText
-                    primary={first_name}
+                    primary={first_name + " " + last_name}
                     secondary={email}
                   />
                   <Link to={`/teacher_profile/${id}`}>

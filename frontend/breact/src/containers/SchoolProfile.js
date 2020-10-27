@@ -19,7 +19,7 @@ const SchoolProfile = () => {
       </Typography>
       <hr className="Title"/>
       <DescriptionSchool {...school}/>
-      <InfoSchool fields={ {country: school['country'], city: school['city'], address: school['address'], postal_code: school['postal_code'], email: school['email'], phone: school['phone'] } }/>
+      <InfoSchool fields= { { country: school['country'], city: school['city'], address: school['address'], postal_code: school['postal_code'], email: school['email'], phone: school['phone'] }}/>
     </div>
   )
 }

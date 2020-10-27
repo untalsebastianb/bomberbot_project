@@ -9,7 +9,7 @@ import TeacherListMail from './TeacherListMail';
 export default function ContactUs() {
 
 
-    const school_id = document.cookie
+  const school_id = document.cookie
   .split('; ')
   .find(row => row.startsWith('school_id'))
   .split('=')[1];
@@ -24,6 +24,25 @@ export default function ContactUs() {
         document.getElementById('Email').value = email
         document.getElementById('to-name').value = first_name
     }
+
+    const handleTeacher2 = (e) => {
+      const data = document.getElementById('Email').value
+      // document.getElementById('to-name').value = first_name
+      
+      if (data === ''){
+        document.getElementById('to-name').value = ''
+        document.getElementById('Email').value = ''
+      } else if (!data.split(' ')[1]) {
+        document.getElementById('to-name').value = ''
+        
+      } else {
+        const first_name = data.split(' ')[0]
+        const email = data.split(' ')[1]
+        document.getElementById('Email').value = email
+        document.getElementById('to-name').value = first_name
+      }
+    }
+
 
   const handleSearch = (e) => {
     e.preventDefault()
@@ -62,15 +81,24 @@ export default function ContactUs() {
         });
     }
     return(  
-    <>
-    
-    <form onSubmit={sendEmail}>
-       <div className="block-input">
-            <div className="block-init">
-                <input type="text" id ="Email" placeholder="Email" name="email"></input>
-                <input type="text" id ="to-name" placeholder="To Name" name="to_name"></input>
-            </div>
-            <input type="text" id="subject" placeholder="Subject" name="subject"></input>
+    <div className="mail">
+      <div className='mail_container'>
+        <form onSubmit={sendEmail}>
+          <div className="block-input">
+          <div className="block-init">
+            <input type="text" id ="Email" list='list' placeholder="Email" name="email" onChange={handleTeacher2}></input>
+            <datalist id='list'>
+            {
+              filtered_teachers?.map(item => {
+              return (
+                      <option key={item.id} >{item.first_name + " " + item.email}</option>  
+                      )
+                    })
+              }
+              </datalist>
+              <input type="text" id ="to-name" placeholder="To Name" name="to_name"></input>
+          </div>
+              <input type="text" id="subject" placeholder="Subject" name="subject"></input>
             
         </div>
         <div className="block-message">
@@ -78,37 +106,8 @@ export default function ContactUs() {
             <button type="submit">Send</button>
         </div>
         <div id="text-response" class="text-response"></div>
-    </form>
-
-     {/* <SearchBar/> */}
-     <div className="search-container">
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder='Search a teacher'
-          name='teacherToSearch'
-          value={ teacherToSearch }
-          onChange={ handleInputChange }
-        />
       </form>
+      </div>
+      </div>
       
-      <span className='search-icon'></span>
-    </div>
-
-    <br></br>
-      {
-        filtered_teachers?.length > 0 &&
-        <>
-            {
-              filtered_teachers?.map(item => {
-                return (
-                <TeacherListMail key={item.id} handleTeacher={handleTeacher} {...item} />
-                )
-              })
-            }
-        </>
-      }
-
-    </>    
-    );
-}
+    );}

@@ -2,11 +2,13 @@
 
 .schoolProfile {
     font-family: $theme-font;
+   
     //padding-left: 60px;
     h3 {
         color: #0F1533;
     }
     .Title {
+        font-weight: bold!important;
         margin-bottom: 50px;
     }
 }

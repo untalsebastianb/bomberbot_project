@@ -13,7 +13,8 @@ import BuyLicenses from '../containers/BuyLicenses'
 import General_to_print from '../reports/generalResportToPrint'
 import Teacher_to_print from '../reports/teacherResportToPrint'
 import TeacherProfile from '../containers/TeacherProfile'
-
+import CreateTeacher from '../containers/CreateTeacher'
+import EditTeacher from '../containers/EditTeacher'
 
 const App = () => (
 <>
@@ -23,11 +24,13 @@ const App = () => (
         <Route exact path='/home' component={ HomePage } />
         <Route exact path='/teacher_manager' component={ TeacherManager } />
         <Route exact path='/school_profile' component={ SchoolProfile } />
-        <Route exact path='/comunicatios' component={ Comunication } />
+        <Route exact path='/comunications' component={ Comunication } />
         <Route exact path='/buy_licences' component={ BuyLicenses } />
         <Route exact path='/teacher_profile/:id' component={ TeacherProfile } />
         <Route exact path='/general_report' component={ General_to_print } />
         <Route exact path='/teacher_report/:id' component={ Teacher_to_print } />
+        <Route exact path='/create_teacher/:id' component={ CreateTeacher } />
+        <Route exact path='/edit_teacher/:id' component={ EditTeacher } />
         <Redirect to='/home' />
         
     </Switch>

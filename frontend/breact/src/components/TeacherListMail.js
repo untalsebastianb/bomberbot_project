@@ -7,7 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton'
 import AddCircleIcon from '@material-ui/icons/AddCircle';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import '../assets/styles/components/TeachersManager.scss'
 
 
@@ -30,7 +30,9 @@ const useStyles = makeStyles((theme) => ({
   large: {
     width: theme.spacing(7),
     height: theme.spacing(7),
-  }
+  },
+  
+  
 }));
 
 
@@ -38,7 +40,7 @@ export default function TeacherListMail({first_name, email, picture, id, handleT
   const classes = useStyles();
   
   return (
-    <>
+      <>
           <div className={classes.demo}>
             <List>
                 <ListItem>

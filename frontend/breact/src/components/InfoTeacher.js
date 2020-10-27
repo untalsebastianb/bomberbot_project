@@ -5,14 +5,14 @@ import '../assets/styles/components/InfoTeacher.scss'
 import { Link } from 'react-router-dom'
 
 
-const InfoTeacher = ({email, address, phone, age, score, id}) => {
+const InfoTeacher = ({email, address, phone, age, score, id, city}) => {
     
     
     return (
       <div className="generalInfo">
         <ul>
           <li className="Country">Age: {age}</li>
-          <li className="City">City: </li>
+          <li className="City">City: {city}</li>
           <li className="Address">Address: {address}</li>
           <li className="PostCode">Score: {score}</li>
           <li className="Email">E-mail: {email}</li>
@@ -20,6 +20,7 @@ const InfoTeacher = ({email, address, phone, age, score, id}) => {
           <Link className="Button" to={`/teacher_report/${id}`}>
             <p>Download Report</p>
           </Link>
+
 
         </ul>
       </div>

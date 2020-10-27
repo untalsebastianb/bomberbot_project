@@ -18,9 +18,12 @@
 }
 
 // Rewritting Material UI STYLES
+.MuiTypography-h2{
+  font-size: 3.74rem !important;
+}
 
 .MuiTypography-body1 {
-  font-size: 2rem!important;
+  font-size: 2rem !important;
 }
 
 .MuiTypography-body2 {
@@ -30,4 +33,30 @@
 .MuiList-padding {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
+}
+
+
+
+.email-teachers{
+  border: solid 2px #aeb7f2;
+  border-radius: 8px;
+  box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
+}
+.menu-search{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+.button-teacher{
+   width: 30%;
+    margin-right: 2%;
+    height: 25px;
+    border: none;
+    background-color: #3069f4;
+    border-radius: 8px;
+    align-self: flex-end;
+    color: white;
+    font-size: 1.5vh;
+    font-family: $theme-font;
+    cursor: pointer;
 }
