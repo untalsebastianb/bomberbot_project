@@ -36,8 +36,8 @@ export default function ContactUs() {
         document.getElementById('to-name').value = ''
         
       } else {
-        const email = data.split(' ')[0]
-        const first_name = data.split(' ')[1]
+        const first_name = data.split(' ')[0]
+        const email = data.split(' ')[1]
         document.getElementById('Email').value = email
         document.getElementById('to-name').value = first_name
       }

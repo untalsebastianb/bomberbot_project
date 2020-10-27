@@ -31,7 +31,7 @@ function MenuBar() {
       <MenuOptions>
         <MenuButton icons={school_icon} route={'/school_profile'} text={'School'}/>
         <MenuButton icons={teacher_icon} route={'/teacher_manager'} text={'Teacher'}/>
-        <MenuButton icons={comunications_icon} route={'/comunicatios'} text={'Mail'}/>
+        <MenuButton icons={comunications_icon} route={'/comunications'} text={'Mail'}/>
         <MenuButton icons={buy_icon} route={'/buy_licences'} text={'Licenses'}/>
         <MenuButton icons={exit_icon} route={'/logout'} text={'Logout'}/>
       </MenuOptions>
