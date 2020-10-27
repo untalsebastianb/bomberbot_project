@@ -3,7 +3,7 @@ import React from 'react'
 import Typography from '@material-ui/core/Typography';
 import '../assets/styles/components/DescriptionTeacher.scss'
 
-const DescriptionTeacher = ({first_name, last_name, picture}) => {
+const DescriptionTeacher = ({first_name, last_name, academic_dg, picture}) => {
     return (
       <div className="Description">
       <div className="ImageLeft">
@@ -16,7 +16,7 @@ const DescriptionTeacher = ({first_name, last_name, picture}) => {
       <div  className="TeacherName">
         {first_name + " " + last_name}
       </div>
-      {/* <p className="teacherExperience">Lorem impsum adnad adnaidas anasmn ainaisdnasidnasi</p> */}
+    <p className="teacherExperience">{academic_dg}</p>
       </div>
       </div>
     );

@@ -13,7 +13,7 @@ const DescriptionSchool = ({name, picture}) => {
             <Typography variant='h4' className="SchoolName">
               {name}
             </Typography>
-            <p className="SchoolDescription">Lorem impsum adnad adnaidas anasmn ainaisdnasidnasi</p>
+            {/* <p className="SchoolDescription">Lorem impsum adnad adnaidas anasmn ainaisdnasidnasi</p> */}
       </div>
       </div>
     );
