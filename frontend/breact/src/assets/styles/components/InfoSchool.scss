@@ -35,18 +35,5 @@
             grid-row-end: 6;
         }
     }
-    .Button {
-        grid-column-start: 2;
-        grid-row-start: 5;
-        grid-row-end: 5;
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
-        border: solid 2px #ffffff;
-        background-color: #fefefe;
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
-    }
+
 }

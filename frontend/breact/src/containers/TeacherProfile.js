@@ -2,6 +2,7 @@ import React from 'react'
 import DescriptionTeacher from '../components/DescriptionTeacher'
 import InfoTeacher from '../components/InfoTeacher'
 import '../assets/styles/components/TeacherProfile.scss'
+import '../assets/styles/components/ButtonEdit.scss'
 import Typography from '@material-ui/core/Typography';
 import useTeacherInfo from '../hooks/useTeacherInfo.js'
 import { Link } from 'react-router-dom'
@@ -28,9 +29,9 @@ const TeacherProfile = (props) => {
       <DescriptionTeacher {...teacherInfo}/>
       <InfoTeacher {...teacherInfo} />
 
-          <Link to={`/edit_teacher/${teacherId}`}>
+          {/* <Link className="ButtonEdit" to={`/edit_teacher/${teacherId}`}>
             <p >Edit</p>
-          </Link>
+          </Link> */}
 
     </div>
   )

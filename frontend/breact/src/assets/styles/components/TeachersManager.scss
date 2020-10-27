@@ -48,15 +48,42 @@
   margin: auto;
 }
 .button-teacher{
-   width: 30%;
-    margin-right: 2%;
-    height: 25px;
-    border: none;
-    background-color: #3069f4;
-    border-radius: 8px;
+  background-image: url('../../images/icon-addTeacher.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
+  border: 2px solid #aeb7f2;
+  background-color: #fefefe;
     align-self: flex-end;
-    color: white;
-    font-size: 1.5vh;
-    font-family: $theme-font;
     cursor: pointer;
+    margin-right: 2%;
+}
+
+.button-teacher p {
+  color: #fff;
+  position: relative;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: .7rem;
+  background: #000;
+  border-radius: 50%;
+  transition: opacity .4s linear;
+  z-index: 10;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  margin: auto;
+  top: 0;
+  bottom: 1px;
+  right: 0px;
+  padding-top: 15px;
+  opacity: 0;
+}
+
+.button-teacher:hover p {
+  opacity: .75;
 }

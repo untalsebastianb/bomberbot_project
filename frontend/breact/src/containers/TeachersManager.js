@@ -2,7 +2,7 @@ import React from 'react'
 import TeachersList from '../components/TeachersList'
 // import useInitialState from '../hooks/useInitialState.js';
 import '../assets/styles/components/TeachersManager.scss'
-import '../assets/styles/components/Buttonplus.scss'
+//import '../assets/styles/components/ButtonEdit.scss'
 import Typography from '@material-ui/core/Typography';
 // import SearchBar from '../components/SearchBar'
 import '../assets/styles/components/SearchBar.scss'
@@ -57,8 +57,8 @@ const TeacherManager = () => {
         </form> 
         <span className='search-icon'></span>
     </div>
-          <Link to={`/create_teacher/${school_id}`}>
-            <p class="button-teacher">Create</p>
+          <Link class="button-teacher" to={`/create_teacher/${school_id}`}>
+            <p>Create</p>
           </Link>
       </div>
 {/* ************************************************* */}
