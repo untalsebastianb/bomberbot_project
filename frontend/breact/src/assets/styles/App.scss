@@ -4,8 +4,8 @@ body {
     margin: 0;
     font-family: $theme-font;
     resize: vertical ;
-}
 
+}
 html {
     font-size: 62.5%;
 }
@@ -14,13 +14,14 @@ html {
 
 #app > .parent-container {
     display: grid;
-    grid-template-columns: 15% 85%;
+    grid-template-columns: 190px auto;
 }
 
 .right-container {
-    margin: 2% 4% 0 4%;
+    margin: 2% 4% 0 8%;
     box-sizing: border-box;
-    height: 100vh;
+    height: 100%;
+    width: auto;
 }
 
 .Logo-bomberbot {

@@ -36,8 +36,8 @@ export default function ContactUs() {
         document.getElementById('to-name').value = ''
         
       } else {
-        const email = data.split(' ')[0]
-        const first_name = data.split(' ')[1]
+        const first_name = data.split(' ')[0]
+        const email = data.split(' ')[1]
         document.getElementById('Email').value = email
         document.getElementById('to-name').value = first_name
       }
@@ -106,40 +106,8 @@ export default function ContactUs() {
             <button type="submit">Send</button>
         </div>
         <div id="text-response" class="text-response"></div>
-    </form>
-    </div>
-      <div class="email-contacs">
-
-     {/* <SearchBar/> */}
-     <div className="search-container">
-        <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder='Search a teacher'
-          name='teacherToSearch'
-          value={ teacherToSearch }
-          onChange={ handleInputChange }
-          />
-        </form>
-      
-      <span className='search-icon'></span>
-    </div>
-
-    <br></br>
-      {
-        filtered_teachers?.length > 0 &&
-        <div class="email-teachers">
-            {
-              filtered_teachers?.map(item => {
-                return (
-                  <TeacherListMail key={item.id} handleTeacher={handleTeacher} {...item} />
-                  )
-                })
-              }
-        </div>
-      }
-
+      </form>
       </div>
-    </div>    
-    );
-}
+      </div>
+      
+    );}

@@ -18,9 +18,12 @@
 }
 
 // Rewritting Material UI STYLES
+.MuiTypography-h2{
+  font-size: 3.74rem !important;
+}
 
 .MuiTypography-body1 {
-  font-size: 2rem!important;
+  font-size: 2rem !important;
 }
 
 .MuiTypography-body2 {
@@ -31,8 +34,56 @@
   padding-top: 0px !important;
   padding-bottom: 0px !important;
 }
+
+
+
 .email-teachers{
   border: solid 2px #aeb7f2;
   border-radius: 8px;
   box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
+}
+.menu-search{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+.button-teacher{
+  background-image: url('../../images/icon-addTeacher.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
+  border: 2px solid #aeb7f2;
+  background-color: #fefefe;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-right: 2%;
+}
+
+.button-teacher p {
+  color: #fff;
+  position: relative;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: .7rem;
+  background: #000;
+  border-radius: 50%;
+  transition: opacity .4s linear;
+  z-index: 10;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  margin: auto;
+  top: 0;
+  bottom: 1px;
+  right: 0px;
+  padding-top: 15px;
+  opacity: 0;
+}
+
+.button-teacher:hover p {
+  opacity: .75;
 }

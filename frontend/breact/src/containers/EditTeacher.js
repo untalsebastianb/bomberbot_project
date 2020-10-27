@@ -1,15 +1,14 @@
-import React, { useState } from 'react'
-import DescriptionSchool from '../components/DescriptionSchool'
-import InfoSchool from '../components/InfoSchool'
+import React, { useEffect, useState } from 'react'
 import '../assets/styles/components/SchoolProfile.scss'
 import '../assets/styles/components/CreateTeacher.scss'
 import Typography from '@material-ui/core/Typography';
-import useInitialState from '../hooks/schoolInformation.js';
 import { useForm } from '../hooks/useForm';
+import useTeacherInfo from '../hooks/useTeacherInfo'
+
  
 
 // containaer for School profile view
-const CreateTeacher = ( props ) => {
+const EditTeacher = ( props ) => {
 //   const cK = (document.cookie).split('user=')[1].split(';')[0];
 //   const API = 'http://127.0.0.1:8000/api/schools/?user=' + cK;
 //   const school = useInitialState(API);
@@ -31,27 +30,42 @@ function getCookie(name) {
 }
 
 const csrftoken = getCookie('csrftoken');
+const teacher_id = props.match.params.id
+const API = `http://127.0.0.1:8000/api/teacher_by_id/?id=${teacher_id}`
+const teacherInfo = useTeacherInfo(API)
 
 
 
-const school_id = props.match.params.id
-const [{first_name, last_name, email, address, city, age, phone, academic_dg, picture}, handleInputChange, handleInputChangeImg] = useForm({
-    // first_name: 'Emilio2',
-    // last_name: 'Facundo',
-    // email: 'emi2@gmail.com',
-    // address: 'calle 8 # 11-13',
-    // age: '22',
-    // phone: '443432564',
-    academic_dg: 'A'
+useEffect(() => {
+    document.getElementById('fn').value = teacherInfo.first_name
+    document.getElementById('ln').value = teacherInfo.last_name
+    document.getElementById('em').value = teacherInfo.email
+    document.getElementById('ad').value = teacherInfo.address
+    document.getElementById('cit').value = teacherInfo.city
+    document.getElementById('ag').value = teacherInfo.age
+    document.getElementById('ph').value = teacherInfo.phone
+    document.getElementById('academic_dg').value = teacherInfo.academic_dg
+    reset()
+}, [teacherInfo])
+
+
+const [{first_name, last_name, email, address, city, age, phone, academic_dg, picture}, handleInputChange, handleInputChangeImg, reset] = useForm({
+    first_name: teacherInfo.first_name,
+    last_name: teacherInfo.last_name,
+    email: teacherInfo.email,
+    city: teacherInfo.city,
+    address: teacherInfo.address,
+    age: teacherInfo.age,
+    phone: teacherInfo.phone,
+    academic_dg: teacherInfo.academic_dg,
 })
+
 
 // const handleInputChangeImg = (e) => {
 //     console.log(e.target.files[0])
 // }
 
 // const [imagestate, setimagestate] = useState(initialState)
-
-
 const handleRegister = (e) => {
     e.preventDefault();
     const data = new FormData()
@@ -63,28 +77,47 @@ const handleRegister = (e) => {
     data.append('age', age)
     data.append('phone', phone)
     data.append('academic_dg', academic_dg)
-    data.append('school_id', school_id)
-    data.append('picture', picture)
+    data.append('id', teacher_id)
+    data.append('school_id', teacherInfo.school_id_id)
+    if (picture){
+        data.append('picture', picture)
+    }
 
-    fetch(`http://127.0.0.1:8000/api/teacher/`, {
-        method: 'POST',
+    
+
+    fetch(`http://127.0.0.1:8000/api/teacher/${teacher_id}/`, {
+        method: 'PUT',
         headers: {
             'X-CSRFToken': csrftoken
         },
         body: data
     })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((response) => {
+        if(!response.ok) throw new Error(response.status);
+        else return response.json();
+      })
+    
+    .then(() => {
+        document.getElementById('teacher_edited').innerHTML = "Edited successful"
+        setTimeout(function(){ document.getElementById('teacher_edited').innerHTML = ""; }, 1000);
+    })
+    .catch(() => {
+        document.getElementById('teacher_edited').innerHTML = "Edited unsuccessful, please verify data"
+        setTimeout(function(){ document.getElementById('teacher_edited').innerHTML = ""; }, 1000);
+    });
+
+    
+    
 
 }
 
   return (
     <div class="create-teacher">
       <Typography variant='h2'>
-        Create Teacher
+        Edit Teacher
       </Typography>
       <hr className="Title"/>
-
+      
       <form onSubmit={handleRegister} encType="multipart/form-data" class="form-teacher">
                 
                 <input 
@@ -92,6 +125,7 @@ const handleRegister = (e) => {
                     placeholder="First Name"
                     name="first_name"
                     className="first-name"
+                    id="fn"
                     // autoComplete="off"
                     value={first_name}
                     onChange={handleInputChange}
@@ -102,6 +136,7 @@ const handleRegister = (e) => {
                     placeholder="Last Name"
                     name="last_name"
                     className=""
+                    id="ln"
                     // autoComplete="off"
                     value={last_name}
                     onChange={handleInputChange}
@@ -112,6 +147,7 @@ const handleRegister = (e) => {
                     placeholder="Email"
                     name="email"
                     className=""
+                    id="em"
                     // autoComplete="off"
                     value={email}
                     onChange={handleInputChange}
@@ -122,6 +158,7 @@ const handleRegister = (e) => {
                     placeholder="Address"
                     name="address"
                     className=""
+                    id="ad"
                     // autoComplete="off"
                     value={address}
                     onChange={handleInputChange}
@@ -132,6 +169,7 @@ const handleRegister = (e) => {
                     placeholder="City"
                     name="city"
                     className=""
+                    id="cit"
                     // autoComplete="off"
                     value={city}
                     onChange={handleInputChange}
@@ -142,6 +180,7 @@ const handleRegister = (e) => {
                     placeholder="Age"
                     name="age"
                     className=""
+                    id="ag"
                     // autoComplete="off"
                     value={age}
                     onChange={handleInputChange}
@@ -152,6 +191,7 @@ const handleRegister = (e) => {
                     placeholder="Phone Number"
                     name="phone"
                     className=""
+                    id="ph"
                     // autoComplete="off"
                     value={phone}
                     onChange={handleInputChange}
@@ -175,11 +215,12 @@ const handleRegister = (e) => {
                     type="submit"
                     className="btn btn-primary btn-block mb-5"
                 >
-                    Register
+                    Update
                 </button>
             </form>
+                <div id="teacher_edited" className="text-response"></div>
     </div>
   )
 }
 
-export default CreateTeacher;
+export default EditTeacher;

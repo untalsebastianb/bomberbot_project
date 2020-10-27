@@ -3,10 +3,10 @@
 import React from 'react'
 import '../assets/styles/components/InfoTeacher.scss'
 import { Link } from 'react-router-dom'
+import '../assets/styles/components/ButtonEdit.scss'
 
 
 const InfoTeacher = ({email, address, phone, age, score, id, city}) => {
-    
     
     return (
       <div className="generalInfo">
@@ -20,8 +20,9 @@ const InfoTeacher = ({email, address, phone, age, score, id, city}) => {
           <Link className="Button" to={`/teacher_report/${id}`}>
             <p>Download Report</p>
           </Link>
-
-
+          <Link className="ButtonEdit" to={`/edit_teacher/${id}`}>
+            <p >Edit</p>
+          </Link>
         </ul>
       </div>
     );

@@ -49,14 +49,14 @@
         box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
         border: 2px solid #aeb7f2;
         background-color: #fefefe;
-        position: absolute;
+        //position: absolute;
         right: 20px;
         bottom: 20px;
         text-decoration: none;
     }
     .Button p {
         color: #fff;
-        position: absolute;
+        position: relative;
         box-sizing: border-box;
         font-size: .7rem;
         background: #000;
@@ -79,5 +79,6 @@
         opacity: .75;
     }
 }
+
 
 

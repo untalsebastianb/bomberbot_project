@@ -54,22 +54,22 @@
     height: 40px;
 }
 .search-container input{
-    border-bottom: solid 2px #aeb7f2;
     font-size: 1.5vh;
     width: 100%;
 }
 .search-container form{
-    width: 90%;
+    font-family: $theme-font;
+    width: 100%;
 }
 .mail{
     margin-top: 2%;
     width: 100%;
-    
+    height: 100%;
 }
 .mail .mail_container{
-    
-   
-    width: 50%;
+
+    width: 100%;
+    height: 500px;
 }
 .email-contacs{
     width: 50%;
@@ -90,14 +90,19 @@
     cursor: pointer;
 }
 
+.block-message{
+    height: 380px;
+}
+
 .block-message textarea , .text-response{
-    height: 85%;
+    height: 100%;
     border: none;
     width: 98%;
     align-self:center;
     outline: none;
     font-family: $theme-font;
     resize: none;
+   
 }
 
 .text-response{
