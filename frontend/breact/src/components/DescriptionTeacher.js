@@ -8,8 +8,9 @@ const DescriptionTeacher = ({first_name, last_name, academic_dg, picture}) => {
       <div className="Description">
       <div className="ImageLeft">
       {
-        picture&&
-        <img className="profilePicture" alt="Teacher profile" src={"http://127.0.0.1:8000/media/" + picture}></img>
+        picture?
+        <img className="profilePicture" alt="Teacher profile" src={"http://127.0.0.1:8000/media/" + picture}></img>:
+        <img className="profilePicture" alt="Teacher profile"></img>
       }
       </div>
       <div className="DescriptionRight">
