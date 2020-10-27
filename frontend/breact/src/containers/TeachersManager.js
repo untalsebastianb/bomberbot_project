@@ -57,7 +57,7 @@ const TeacherManager = () => {
         </form> 
         <span className='search-icon'></span>
     </div>
-    <Link to={`/create_teacher/${school_id}`}>
+          <Link to={`/create_teacher/${school_id}`}>
             <p class="button-teacher">Create</p>
           </Link>
       </div>
