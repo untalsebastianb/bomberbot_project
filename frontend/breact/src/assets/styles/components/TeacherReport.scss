@@ -30,3 +30,23 @@
         font-size: 20px;
     }
 }
+
+.TeachersReport {
+    display: flex;
+    flex-direction: column;
+}
+.TeachersReport button {
+    margin: 3% 0;
+    align-self: center;
+    width: 20%;
+    height: 30px;
+    border: none;
+    background-color: #3069f4;
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.TeachersReport button:hover {
+    opacity: 0.9;
+}

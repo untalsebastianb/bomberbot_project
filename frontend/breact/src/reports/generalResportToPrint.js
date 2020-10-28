@@ -18,12 +18,12 @@ const General_to_print = () => {
     const componentRef = useRef();
    
     return (
-      <div>
+      <div className='GeneralReport'>
+        <ComponentToPrint ref={componentRef} />
         <ReactToPrint
           trigger={() => <button>Print this out!</button>}
           content={() => componentRef.current}
         />
-        <ComponentToPrint ref={componentRef} />
       </div>
     );
   };
