@@ -21,7 +21,8 @@ const InfoSchool = (props) => {
           <Link className="Button" to='/general_report'>
             <p>Download Report</p>
           </Link>
-          <Link className="ButtonEdit" to='/general_report'>
+
+          <Link className="ButtonEdit" to={`/edit_school/${props.fields['id']}`}>
             <p>Edit School</p>
           </Link>
         </ul>

@@ -15,6 +15,7 @@ import Teacher_to_print from '../reports/teacherResportToPrint'
 import TeacherProfile from '../containers/TeacherProfile'
 import CreateTeacher from '../containers/CreateTeacher'
 import EditTeacher from '../containers/EditTeacher'
+import EditSchool from '../containers/EditSchool'
 
 const App = () => (
 <>
@@ -31,6 +32,7 @@ const App = () => (
         <Route exact path='/teacher_report/:id' component={ Teacher_to_print } />
         <Route exact path='/create_teacher/:id' component={ CreateTeacher } />
         <Route exact path='/edit_teacher/:id' component={ EditTeacher } />
+        <Route exact path='/edit_school/:id' component={ EditSchool } />
         <Redirect to='/home' />
         
     </Switch>

@@ -21,7 +21,6 @@ function MenuBar() {
 
   const API = `http://127.0.0.1:8000/api/schools/?user=${school_id}`
   const schoolData = useInfoMenu(API)
-  console.log(schoolData)
 
   return (
     <div className='menu'>
