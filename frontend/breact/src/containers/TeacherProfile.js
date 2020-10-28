@@ -15,7 +15,6 @@ const TeacherProfile = (props) => {
   const API = `http://127.0.0.1:8000/api/teacher_by_id/?id=${teacherId}`
   const teacherInfo = useTeacherInfo(API)
   let {email, score} = teacherInfo
-  console.log(email, score)
 
   return (
     
@@ -29,9 +28,6 @@ const TeacherProfile = (props) => {
       <DescriptionTeacher {...teacherInfo}/>
       <InfoTeacher {...teacherInfo} />
 
-          {/* <Link className="ButtonEdit" to={`/edit_teacher/${teacherId}`}>
-            <p >Edit</p>
-          </Link> */}
 
     </div>
   )

@@ -11,7 +11,6 @@ const SchoolProfile = () => {
   const cK = (document.cookie).split('user=')[1].split(';')[0];
   const API = 'http://127.0.0.1:8000/api/schools/?user=' + cK;
   const school = useInitialState(API);
-  console.log(school)
   return (
     <div className='schoolProfile'>
       <Typography variant='h2'>
@@ -19,7 +18,7 @@ const SchoolProfile = () => {
       </Typography>
       <hr className="Title"/>
       <DescriptionSchool {...school}/>
-      <InfoSchool fields= { { country: school['country'], city: school['city'], address: school['address'], postal_code: school['postal_code'], email: school['email'], phone: school['phone'] }}/>
+      <InfoSchool fields= { { country: school['country'], city: school['city'], address: school['address'], postal_code: school['postal_code'], email: school['email'], phone: school['phone'], id: school['id'] }}/>
     </div>
   )
 }
