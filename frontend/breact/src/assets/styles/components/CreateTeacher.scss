@@ -11,48 +11,27 @@
    margin-top: 5%;
     
 }
-.degree-and-picture{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin-left: 2%;
-}
 
-.form-teacher .first-name{
-    margin-top: 4%;
-}
 .form-teacher input{
     border: none;
-    border-bottom: solid 1px #aeb7f2;
     outline: none;
     width: 92%;
     font-size: 15px;
-    margin:2%;
     background-color: #fefefe;
+    border:solid;
+    border-color: transparent;
 } 
-.degree-and-picture .selector{
+.selector{
     font-size: 15px;
     border: solid 1px #aeb7f2;
     width: 25%;
+    height: 35px;
+    cursor: pointer;
 }
-.degree-and-picture .photo{
+.photo{
     font-size: 15px;
     width: 66%;
    height: 20px;
-}
-.form-teacher button{
-    width: 150px;
-    border: none;
-    background-color: #3069f4;
-    border-radius: 8px;
-    margin: auto;
-    margin-bottom: 2%;
-    color: white;
-    font-size: 15px;
-    height: 35px;
-    cursor: pointer;
-}.degree-and-picture select{
-    height: 30px;
 }
 
 
@@ -60,4 +39,33 @@
     text-align: center;
     font-weight: bold;
     font-size: 17px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 1px #aeb7f2;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+   
+   
+}
+.row label{
+    
+    font-size:20px;
+    width: 112px;
+    height: 18px;
+    text-align: left;
+    font-weight: 50px;
+}
+.button-photo input, .submit{
+    display: none;
+}
+
+.row-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2%;
 }

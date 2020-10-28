@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
-import DescriptionSchool from '../components/DescriptionSchool'
-import InfoSchool from '../components/InfoSchool'
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import '../assets/styles/components/SchoolProfile.scss'
 import '../assets/styles/components/CreateTeacher.scss'
 import Typography from '@material-ui/core/Typography';
 import useInitialState from '../hooks/schoolInformation.js';
 import { useForm } from '../hooks/useForm';
- 
+import Button from '@material-ui/core/Button';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
+import IconButton from '@material-ui/core/IconButton';
+
 
 // containaer for School profile view
 const CreateTeacher = ( props ) => {
@@ -78,6 +80,7 @@ const handleRegister = (e) => {
 
 }
 
+
   return (
     <div class="create-teacher">
       <Typography variant='h2'>
@@ -87,96 +90,132 @@ const handleRegister = (e) => {
 
       <form onSubmit={handleRegister} encType="multipart/form-data" class="form-teacher">
                 
-                <input 
-                    type="text"
-                    placeholder="First Name"
-                    name="first_name"
-                    className="first-name"
-                    // autoComplete="off"
-                    value={first_name}
-                    onChange={handleInputChange}
-                />
-
-                <input 
-                    type="text"
-                    placeholder="Last Name"
-                    name="last_name"
-                    className=""
-                    // autoComplete="off"
-                    value={last_name}
-                    onChange={handleInputChange}
-                />
-
-                <input 
-                    type="text"
-                    placeholder="Email"
-                    name="email"
-                    className=""
-                    // autoComplete="off"
-                    value={email}
-                    onChange={handleInputChange}
-                />
-
-                <input 
-                    type="text"
-                    placeholder="Address"
-                    name="address"
-                    className=""
-                    // autoComplete="off"
-                    value={address}
-                    onChange={handleInputChange}
-                />
-
-                <input 
-                    type="text"
-                    placeholder="City"
-                    name="city"
-                    className=""
-                    // autoComplete="off"
-                    value={city}
-                    onChange={handleInputChange}
-                />
-
-                <input
-                    type="text"
-                    placeholder="Age"
-                    name="age"
-                    className=""
-                    // autoComplete="off"
-                    value={age}
-                    onChange={handleInputChange}
-                />
-
-                <input 
-                    type="text"
-                    placeholder="Phone Number"
-                    name="phone"
-                    className=""
-                    // autoComplete="off"
-                    value={phone}
-                    onChange={handleInputChange}
-                />
-                <div class="degree-and-picture">
-                <select id='academic_dg' name='academic_dg' onChange={handleInputChange} class="selector">
-                    <option value="Professional"> Professional </option>
-                    <option value="Master"> Master </option>
-                    <option value="PhD"> PhD </option>
-                </select>
-
-                <input 
-                    onChange={handleInputChangeImg}
-                    id='picture'
-                    type="file"
-                    name="picture"
-                    className="photo"
-                />
+                <div class="row">
+                    <label>First Name:</label>
+                    <input 
+                        type="text"
+                        name="first_name"
+                        
+                        // autoComplete="off"
+                        value={first_name}
+                        onChange={handleInputChange}
+                    />
                 </div>
-                <button
-                    type="submit"
-                    className="btn btn-primary btn-block mb-5"
-                >
-                    Register
-                </button>
+                <div class="row">
+                    <label>Last Name:</label>
+                    <input 
+                        type="text"
+                        name="last_name"
+                        className=""
+                        // autoComplete="off"
+                        value={last_name}
+                        onChange={handleInputChange}
+                    />
+                </div>
+                <div class="row">
+                    <label>Email:</label>
+                    <input 
+                        type="text"
+                        name="email"
+                        className=""
+                        // autoComplete="off"
+                        value={email}
+                        onChange={handleInputChange}
+                    />
+                </div>
+                <div class="row">
+                    <label>Address:</label>
+                    <input 
+                        type="text"
+                        name="address"
+                        className=""
+                        // autoComplete="off"
+                        value={address}
+                        onChange={handleInputChange}
+                    />
+                </div>
+                <div class="row">
+                    <label>City:</label>
+                    <input 
+                        type="text"
+                        name="city"
+                        className=""
+                        // autoComplete="off"
+                        value={city}
+                        onChange={handleInputChange}
+                    />
+                </div>
+                <div class="row">
+                    <label>Age:</label>
+                    <input
+                        type="text"
+                        name="age"
+                        className=""
+                        // autoComplete="off"
+                        value={age}
+                        onChange={handleInputChange}
+                    />
+                </div>
+                <div class="row">
+                    <label>Phone:</label>
+                    <input 
+                        type="text"
+                        name="phone"
+                        className=""
+                        // autoComplete="off"
+                        value={phone}
+                        onChange={handleInputChange}
+                    />
+                </div>
+
+                <div class="row">
+                    <label>Degree:</label>
+                    <select id='academic_dg' name='academic_dg' onChange={handleInputChange} class="selector">
+                        <option value="Professional"> Professional </option>
+                        <option value="Master"> Master </option>
+                        <option value="PhD"> PhD </option>
+                    </select>
+                </div>
+                <div class="row-button">
+                    <div class="button-photo">
+                        <input
+                            accept="image/*"
+                            onChange={handleInputChangeImg}
+                            id='picture'
+                            type="file"
+                            name="picture"
+                            className="photo"
+                        />
+                   
+                        <label htmlFor='picture'>
+                            <Button variant="contained" border={1} component="span" size="medium"   style={{backgroundColor: "#3069f4", color: "white", width: 150, height:40}}>
+                            <Typography variant='h5'>
+                                Upload
+                            </Typography>
+                            <IconButton color="white" aria-label="upload picture" component="span">
+                            <PhotoCamera />
+                            </IconButton>
+                            </Button>
+                        </label>
+                        
+                    </div>
+                        <button type="submit" id="submit" className="submit">
+                    
+                        </button>
+                        <label htmlFor='submit'>
+                            <Button variant="contained" border={1} component="span" size="medium"  style={{backgroundColor: "#3069f4", color: "white", width: 150 ,height:40}}>
+                            <Typography variant='h5'>
+                                Register
+                            </Typography>
+                           
+                            </Button>
+                        </label>
+
+                </div>
+              
+                
+                
+                
             </form>
     </div>
   )
