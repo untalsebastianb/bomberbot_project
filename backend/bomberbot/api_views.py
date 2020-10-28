@@ -129,8 +129,9 @@ def GeneralReport(request):
 
 
         num_students_by_teacher
-    average_age = age / len(teachers)
+    average_age = round(age / len(teachers), 2)
     average_score = round(total_score / len(teachers), 2)
+    
     data = {
         'num_teachers' : len(teachers),
         'num_students' : school_info[0].num_students,
