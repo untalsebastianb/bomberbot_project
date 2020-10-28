@@ -77,9 +77,9 @@
 }
 .block-message button{
     
-    width: 30%;
+    width: 20%;
     margin-right: 2%;
-    height: 25px;
+    height: 30px;
     border: none;
     background-color: #3069f4;
     border-radius: 8px;
@@ -88,6 +88,10 @@
     font-size: 1.5vh;
     font-family: $theme-font;
     cursor: pointer;
+}
+
+.block-message button:hover {
+    opacity: 0.9;
 }
 
 .block-message{
@@ -102,7 +106,6 @@
     outline: none;
     font-family: $theme-font;
     resize: none;
-   
 }
 
 .text-response{
