@@ -8,14 +8,14 @@
     background-color: #fefefe;
     width: 70%;
     margin: auto;
-   margin-top: 5%;
+    margin-top: 5%;
     
 }
 
 .form-teacher input{
     border: none;
     outline: none;
-    width: 92%;
+    width: auto;
     font-size: 15px;
     background-color: #fefefe;
     border:solid;
@@ -24,14 +24,15 @@
 .selector{
     font-size: 15px;
     border: solid 1px #aeb7f2;
-    width: 25%;
-    height: 35px;
+    width: auto;
+    height: 30px;
     cursor: pointer;
+    margin-left: 2%;
 }
 .photo{
     font-size: 15px;
     width: 66%;
-   height: 20px;
+    height: 20px;
 }
 
 
@@ -48,16 +49,15 @@
     padding-bottom: 2%;
     margin-left: 2%;
     margin-right: 2%;
-   
-   
 }
 .row label{
     
-    font-size:20px;
-    width: 112px;
+    font-size: 1.8rem;
+    width: auto;
     height: 18px;
     text-align: left;
     font-weight: 50px;
+    color: #5b5656;
 }
 .button-photo input, .submit{
     display: none;
