@@ -3,6 +3,7 @@ import useInitialState from '../hooks/generalReport.js';
 import Typography from '@material-ui/core/Typography';
 import '../assets/styles/components/GeneralReport.scss'
 
+
 const GeneralReport = (props) => {
     const cK = (document.cookie).split('school_id=')[1].split(';')[0];
     const API = 'http://127.0.0.1:8000/api/general_report/?id=' + cK;
