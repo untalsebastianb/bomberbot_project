@@ -19,7 +19,7 @@ body
 }
 .Rectangle-Copy
 {
-    width: 50%;
+    width: 35%;
     height: 200px;
     border-radius: 8px;
     box-shadow: 10px 10px 20px 0 #16293b;
@@ -30,6 +30,10 @@ body
     flex-direction: column;
     align-items: center;
 }
+@media (max-width: 600px){
+    .Rectangle-Copy{
+        width: 60%;
+    }}
 .form-parent
 {
     width: 50%;
