@@ -5,7 +5,6 @@ import useTeacherInfo from '../hooks/useTeacherInfo';
 import Button from '@material-ui/core/Button';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import IconButton from '@material-ui/core/IconButton';
-
  
 
 // containaer for School profile view

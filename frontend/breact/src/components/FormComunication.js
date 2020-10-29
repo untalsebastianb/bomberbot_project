@@ -4,7 +4,8 @@ import '../assets/styles/components/FormComunication.scss'
 import { useForm } from '../hooks/useForm';
 import { getTeachers } from '../search/getTeachers';
 import useInitialState from '../hooks/useInitialState';
-import TeacherListMail from './TeacherListMail';
+import { Alert } from '@material-ui/lab';
+
 
 export default function ContactUs() {
 
@@ -58,11 +59,6 @@ export default function ContactUs() {
         document.getElementById('to-name').value = "";
         document.getElementById('subject').value = "";
    }
-   /*change the message color*/
-   function changecolor(actualclass, newclass){
-        document.getElementById('text-response').classList.remove(actualclass);
-        document.getElementById('text-response').classList.add(newclass);
-   }
 
     function sendEmail(e) {
       e.preventDefault();
@@ -70,13 +66,13 @@ export default function ContactUs() {
       emailjs.sendForm('service_i5whmbn', 'template_itn7q66', e.target, 'user_WLAva5REpynihKep6GzNN')
         .then((result) => {
             console.log(result.text);
-            changecolor('alert','confirmation');
-            document.getElementById('text-response').innerHTML =("Message sent");
+            document.getElementById('text-response1').style.display="block";
+            document.getElementById('text-response2').style.display="none";
             clear();
         }, (error) => {
             console.log(error.text);
-            changecolor('confirmation', 'alert');
-            document.getElementById('text-response').innerHTML =("Sorry we couldn't sent your message :(");
+            document.getElementById('text-response2').style.display="block";
+            document.getElementById('text-response1').style.display="none";
             clear();
         });
     }
@@ -105,7 +101,12 @@ export default function ContactUs() {
             <textarea id="story" name="message" rows="5" cols="33" placeholder="Your message"></textarea>
             <button type="submit">Send</button>
         </div>
-        <div id="text-response" class="text-response"></div>
+        <div id="text-response1" class="text-response">
+          <Alert style={{fontSize: 15}} onClose={() => {document.getElementById('text-response1').style.display = "none";}}>Your E-Mail has been send!</Alert>
+        </div>
+        <div id="text-response2" class="text-response">
+          <Alert severity="error" style={{fontSize: 15}} onClose={() => {document.getElementById('text-response2').style.display = "none";}}> Your message was not sent</Alert>
+        </div>
       </form>
       </div>
       </div>

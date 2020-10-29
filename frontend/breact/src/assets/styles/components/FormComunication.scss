@@ -98,7 +98,7 @@
     height: 380px;
 }
 
-.block-message textarea , .text-response{
+.block-message textarea{
     height: 100%;
     border: none;
     width: 98%;
@@ -109,9 +109,9 @@
 }
 
 .text-response{
-    text-align: center;
-    font-weight: bold;
-    font-size: 17px;
+    margin:auto;
+    width: 89%;
+    display: none;
 }
 .confirmation{
     color: #3069f4;
