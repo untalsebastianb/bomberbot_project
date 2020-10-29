@@ -8,6 +8,7 @@ import { useForm } from '../hooks/useForm';
 import Button from '@material-ui/core/Button';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import IconButton from '@material-ui/core/IconButton';
+import { Alert } from '@material-ui/lab';
 
 
 
@@ -76,8 +77,21 @@ const handleRegister = (e) => {
         },
         body: data
     })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((response) => {
+        if(!response.ok) throw new Error(response.status);
+        else return response.json();
+      })
+    
+    .then(() => {
+        document.getElementById('teacher_created').style.display="block";
+        document.getElementById('teacher_error').style.display="none";
+        setTimeout(function(){ document.getElementById('teacher_created').style.display = "none"; }, 2000);
+    })
+    .catch(() => {
+        document.getElementById('teacher_error').style.display="block";
+        document.getElementById('teacher_created').style.display="none";
+        setTimeout(function(){ document.getElementById('teacher_error').style.display = "none"; }, 2000);
+    });
 
 }
 
@@ -218,6 +232,12 @@ const handleRegister = (e) => {
                 
                 
             </form>
+            <div id="teacher_created" class="response-create">
+                <Alert style={{fontSize: 15}} onClose={() => {document.getElementById('teacher_created').style.display = "none";}}>Teacher Created!</Alert>
+            </div>
+            <div id="teacher_error" class="response-create">
+                <Alert severity="error" style={{fontSize: 15}} onClose={() => {document.getElementById('teacher_error').style.display = "none";}}> The Teacher was not created, check that the fields are not empty</Alert>
+            </div>
     </div>
   )
 }
