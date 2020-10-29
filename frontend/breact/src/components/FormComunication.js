@@ -68,11 +68,13 @@ export default function ContactUs() {
             console.log(result.text);
             document.getElementById('text-response1').style.display="block";
             document.getElementById('text-response2').style.display="none";
+            setTimeout(function(){ document.getElementById('text-response1').style.display = "none"; }, 2000);
             clear();
         }, (error) => {
             console.log(error.text);
             document.getElementById('text-response2').style.display="block";
             document.getElementById('text-response1').style.display="none";
+            setTimeout(function(){ document.getElementById('text-response2').style.display = "none"; }, 2000);
             clear();
         });
     }
@@ -105,7 +107,7 @@ export default function ContactUs() {
           <Alert style={{fontSize: 15}} onClose={() => {document.getElementById('text-response1').style.display = "none";}}>Your E-Mail has been send!</Alert>
         </div>
         <div id="text-response2" class="text-response">
-          <Alert severity="error" style={{fontSize: 15}} onClose={() => {document.getElementById('text-response2').style.display = "none";}}> Your message was not sent</Alert>
+          <Alert severity="error" style={{fontSize: 15}} onClose={() => {document.getElementById('text-response2').style.display = "none";}}> Your message was not sent, , check that the fields are not empty</Alert>
         </div>
       </form>
       </div>

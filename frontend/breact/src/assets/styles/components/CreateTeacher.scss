@@ -38,11 +38,7 @@
 }
 
 
-.text-response{
-    text-align: center;
-    font-weight: bold;
-    font-size: 17px;
-}
+
 .row{
     display: flex;
     flex-direction: row;
@@ -70,4 +66,10 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 2%;
+}
+.response-edit, .response-create{
+    width: 70%;
+    margin: auto;
+    display: none;
+    margin-top: 2%;
 }

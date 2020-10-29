@@ -5,6 +5,7 @@ import useTeacherInfo from '../hooks/useTeacherInfo';
 import Button from '@material-ui/core/Button';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import IconButton from '@material-ui/core/IconButton';
+import { Alert } from '@material-ui/lab';
  
 
 // containaer for School profile view
@@ -98,12 +99,14 @@ const handleRegister = (e) => {
       })
     
     .then(() => {
-        document.getElementById('teacher_edited').innerHTML = "Edited successful"
-        setTimeout(function(){ document.getElementById('teacher_edited').innerHTML = ""; }, 1000);
+        document.getElementById('teacher_edited').style.display="block";
+        document.getElementById('teacher_error').style.display="none";
+        setTimeout(function(){ document.getElementById('teacher_edited').style.display = "none"; }, 2000);
     })
     .catch(() => {
-        document.getElementById('teacher_edited').innerHTML = "Edited unsuccessful, please verify data"
-        setTimeout(function(){ document.getElementById('teacher_edited').innerHTML = ""; }, 1000);
+        document.getElementById('teacher_error').style.display="block";
+        document.getElementById('teacher_edited').style.display="none";
+        setTimeout(function(){ document.getElementById('teacher_error').style.display = "none"; }, 2000);
     });
 
     
@@ -247,7 +250,12 @@ const handleRegister = (e) => {
                 
                 
             </form>
-                <div id="teacher_edited" className="text-response"></div>
+            <div id="teacher_edited" class="response-edit">
+                <Alert style={{fontSize: 15}} onClose={() => {document.getElementById('teacher_edited').style.display = "none";}}>Teacher updated!!</Alert>
+            </div>
+            <div id="teacher_error" class="response-edit">
+                <Alert severity="error" style={{fontSize: 15}} onClose={() => {document.getElementById('teacher_error').style.display = "none";}}>Teacher was not updated, check that the fields are not empty</Alert>
+            </div>
     </div>
   )
 }
