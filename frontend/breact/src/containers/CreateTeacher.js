@@ -10,6 +10,7 @@ import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import IconButton from '@material-ui/core/IconButton';
 
 
+
 // containaer for School profile view
 const CreateTeacher = ( props ) => {
 //   const cK = (document.cookie).split('user=')[1].split(';')[0];
