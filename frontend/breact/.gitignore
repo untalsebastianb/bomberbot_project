@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+bomberbot/bomberbot_project/frontend/node_modules
 
 # testing
 /coverage
