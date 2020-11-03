@@ -1,51 +1,37 @@
+"""Serializer module for the existing models"""
+
 from rest_framework import serializers
 from bomberbot.models import Teacher, School, Classroom, Lesson
 from django.contrib.auth.models import User
 
 
 class SchoolSerializer(serializers.ModelSerializer):
+    """School model serializer for all fields"""
     class Meta:
+        """Meta information about School model"""
         model = School
         fields = '__all__'
-   
+
 
 class TeacherSerializer(serializers.ModelSerializer):
+    """Teacher model serializer for all fields"""
     class Meta:
+        """Meta information about Teacher model"""
         model = Teacher
         fields = '__all__'
 
+
 class ClassroomSerializer(serializers.ModelSerializer):
+    """Classroom model serializer for all fields"""
     class Meta:
+        """Meta information about Classroom model"""
         model = Classroom
         fields = '__all__'
 
+
 class LessonSerializer(serializers.ModelSerializer):
+    """Lesson model serializer for all fields"""
     class Meta:
+        """Meta information about Lesson model"""
         model = Lesson
         fields = '__all__'
-
-
-    # def create(self, validate_data):
-    #     u = User()
-    #     u.username = validate_data.get('user')
-    #     u.set_password = validate_data.get('password')
-    #     u.save()
-    #     instance = School(user=u)
-    #     # instance.user = validate_data.get('user')
-    #     # instance.set_password = validate_data.get('password')
-    #     instance.country = validate_data.get('country')
-    #     instance.address = validate_data.get('address')
-    #     instance.phone = validate_data.get('phone')
-    #     instance.name = validate_data.get('name')
-    #     instance.email = validate_data.get('email')
-    #     instance.num_students = validate_data.get('num_students')
-    #     # instance.picture = validate_data.get('picture')
-    #     instance.save()
-    #     return instance
-    
-    # def validate_username(self, data):
-    #     schools = School.objects.filter(username=data)
-    #     if len(schools) != 0:
-    #         raise serializers.ValidationError('User already exist')
-    #     else:
-    #         return data
