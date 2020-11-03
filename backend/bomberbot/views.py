@@ -91,35 +91,3 @@ def signup_view(request):
 
     return render(request, 'signup.html')
 
-
-
-################################################################
-###################api views####################################
-################################################################
-# from django.contrib.auth.models import User
-# from bomberbot.models import Teacher, School, Classroom, Lesson
-# mostrat todo
-# Modelo.objects.all()
-
-# crear usuario
-# User.objects.create(username='user2', password='1122')
-
-# crear school a partir de un usuario
-# u = User.objects.create(username='user3', password='1122')
-# s = School.objects.create(user=u, country='colombia', address='cra 11 #5-4', phone='23543345', name='Santo tomas', email='st@gm.com', num_students=150)
-
-
-# # crear teacher a partir de el school anterior
-# t = Teacher.objects.create(school_id=s, address='cra 12 #5-44', first_name='Carlos', last_name='Perez', email='carlos6@gm.com', age=33, academic_dg='4')
-# # cambio
-# t = Teacher.objects.create(school_id=s, address='cra 12 #5-44', phone='63543345', first_name='Carlos', last_name='Perez', email='carlos6@gm.com', age=33, academic_dg='4')
-
-# # crear una clase a partir del teacher creado
-# c = Classroom.objects.create(teacher_id=t, name='class 6', num_students=20)
-
-# # puedo buscar un teacher por la id y crear una clase
-# t1 = Teacher.objects.get(id=t.id)
-# c = Classroom.objects.create(teacher_id=t1, name='class 9', num_students=2)
-
-# # crear una lesson a partir de un classroom
-# l=Lesson.objects.create(class_room_id=c, name='10', average_score=4.5)
