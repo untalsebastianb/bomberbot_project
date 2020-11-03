@@ -12,12 +12,21 @@ import MenuButton from '../components/MenuButton';
 import useInfoMenu from '../hooks/useInfoMenu.js'
 
 
+/**
+ * send data to component MenuBar.
+ *
+ * @component
+ * 
+ * return (
+ *   <div className='menu'/>
+ * )
+ */
 function MenuBar() {
-  
+
   const school_id = document.cookie
-  .split('; ')
-  .find(row => row.startsWith('user'))
-  .split('=')[1];
+    .split('; ')
+    .find(row => row.startsWith('user'))
+    .split('=')[1];
 
   const API = `http://127.0.0.1:8000/api/schools/?user=${school_id}`
   const schoolData = useInfoMenu(API)
@@ -25,17 +34,17 @@ function MenuBar() {
   return (
     <div className='menu'>
       <MenuInfo {...schoolData}>
-        <StatusLicense/>
+        <StatusLicense />
       </MenuInfo>
       <MenuOptions>
-        <MenuButton icons={school_icon} route={'/school_profile'} text={'School'}/>
-        <MenuButton icons={teacher_icon} route={'/teacher_manager'} text={'Teacher'}/>
-        <MenuButton icons={comunications_icon} route={'/comunications'} text={'Mail'}/>
-        <MenuButton icons={buy_icon} route={'/buy_licences'} text={'Licenses'}/>
-        <MenuButton icons={exit_icon} route={'/logout'} text={'Logout'}/>
+        <MenuButton icons={school_icon} route={'/school_profile'} text={'School'} />
+        <MenuButton icons={teacher_icon} route={'/teacher_manager'} text={'Teacher'} />
+        <MenuButton icons={comunications_icon} route={'/comunications'} text={'Mail'} />
+        <MenuButton icons={buy_icon} route={'/buy_licences'} text={'Licenses'} />
+        <MenuButton icons={exit_icon} route={'/logout'} text={'Logout'} />
       </MenuOptions>
       <div className="contact-us">
-        <p id='Call-us'> Call us today!<br/>+31 (0)20 894 3044</p>
+        <p id='Call-us'> Call us today!<br />+31 (0)20 894 3044</p>
         <p id='email'>hello@bomberbot.com</p>
       </div>
     </div>
