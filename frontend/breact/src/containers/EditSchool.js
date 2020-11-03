@@ -1,123 +1,141 @@
 import React, { useEffect, useState } from 'react'
 import Typography from '@material-ui/core/Typography';
 import { useForm } from '../hooks/useForm';
-import useTeacherInfo from '../hooks/useTeacherInfo';
 import Button from '@material-ui/core/Button';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import IconButton from '@material-ui/core/IconButton';
 import useInitialState from '../hooks/useInitialState';
 import { Alert } from '@material-ui/lab';
 
+
+/**
+ * Component for Edit School.
+ * 
+ * @component
+ * return (
+ *  <div className='edit-teacher' />
+ * )
+ */
  
+const EditSchool = (props) => {
 
-const EditSchool = ( props ) => {
-
-function getCookie(name) {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
+    /**
+    * return cookieValue
+    * @param   {string} name name of cookie
+    * @return  {string}  return value cookie
+    */
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
             }
         }
+        return cookieValue;
     }
-    return cookieValue;
-}
 
-const csrftoken = getCookie('csrftoken');
-const school_id = props.match.params.id
+    const csrftoken = getCookie('csrftoken');
+    const school_id = props.match.params.id;
+    const API = 'http://127.0.0.1:8000/api/schools/' + school_id;
+    const schoolInfo = useInitialState(API)
 
-const API = 'http://127.0.0.1:8000/api/schools/' + school_id;
-const schoolInfo = useInitialState(API)
+    /**
+    *  UseEfect: upload form with data.
+    *
+    */
+    useEffect(() => {
+        document.getElementById('cnt').value = schoolInfo.country
+        document.getElementById('cit2').value = schoolInfo.city
+        document.getElementById('ad2').value = schoolInfo.address
+        document.getElementById('pc2').value = schoolInfo.postal_code
+        document.getElementById('ph2').value = schoolInfo.phone
+        document.getElementById('nm2').value = schoolInfo.name
+        document.getElementById('em2').value = schoolInfo.email
+        reset()
+    }, [schoolInfo])
 
-useEffect(() => {
-    document.getElementById('cnt').value = schoolInfo.country
-    document.getElementById('cit2').value = schoolInfo.city
-    document.getElementById('ad2').value = schoolInfo.address
-    document.getElementById('pc2').value = schoolInfo.postal_code
-    document.getElementById('ph2').value = schoolInfo.phone
-    document.getElementById('nm2').value = schoolInfo.name
-    document.getElementById('em2').value = schoolInfo.email
-    reset()
-}, [schoolInfo])
-
-const [{name, country, email, address, city, phone, postal_code, picture, user}, handleInputChange, handleInputChangeImg, reset] = useForm({
-    country: schoolInfo.country,
-    city: schoolInfo.city,
-    address: schoolInfo.address,
-    postal_code: schoolInfo.postal_code,
-    phone: schoolInfo.phone,
-    name: schoolInfo.name,
-    email: schoolInfo.email,
-})
+    const [{ name, country, email, address, city, phone, postal_code, picture, user }, handleInputChange, handleInputChangeImg, reset] = useForm({
+        country: schoolInfo.country,
+        city: schoolInfo.city,
+        address: schoolInfo.address,
+        postal_code: schoolInfo.postal_code,
+        phone: schoolInfo.phone,
+        name: schoolInfo.name,
+        email: schoolInfo.email,
+    })
 
 
+    /**
+    * Send a request with post method
+    *
+    */
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const data = new FormData()
+        data.append('country', country)
+        data.append('city', city)
+        data.append('address', address)
+        data.append('postal_code', postal_code)
+        data.append('phone', phone)
+        data.append('name', name)
+        data.append('email', email)
+        data.append('user', user)
+        if (picture) {
+            data.append('picture', picture)
+        }
+        data.append('user', schoolInfo.user)
 
-const handleRegister = (e) => {
-    e.preventDefault();
-    const data = new FormData()
-    data.append('country', country)
-    data.append('city', city)
-    data.append('address', address)
-    data.append('postal_code', postal_code)
-    data.append('phone', phone)
-    data.append('name', name)
-    data.append('email', email)
-    data.append('user', user)
-    if (picture){
-        data.append('picture', picture)
+
+
+        fetch(`http://127.0.0.1:8000/api/schools/${school_id}/`, {
+            method: 'PUT',
+            headers: {
+                'X-CSRFToken': csrftoken
+            },
+            body: data
+        })
+            // .then((response) => response.json())
+            // .then((data) => console.log(data))
+            .then((response) => {
+                if (!response.ok) throw new Error(response.status);
+                else return response.json();
+            })
+
+            .then(() => {
+                document.getElementById('school_edited').style.display = "block";
+                document.getElementById('school_error').style.display = "none";
+                setTimeout(function () { document.getElementById('school_edited').style.display = "none"; }, 2000);
+            })
+            .catch(() => {
+                document.getElementById('school_error').style.display = "block";
+                document.getElementById('school_edited').style.display = "none";
+                setTimeout(function () { document.getElementById('school_error').style.display = "none"; }, 2000);
+            });
+
+
+
+
+
     }
-    data.append('user', schoolInfo.user)
-    
-    
 
-    fetch(`http://127.0.0.1:8000/api/schools/${school_id}/`, {
-        method: 'PUT',
-        headers: {
-            'X-CSRFToken': csrftoken
-        },
-        body: data
-    })
-    // .then((response) => response.json())
-    // .then((data) => console.log(data))
-    .then((response) => {
-        if(!response.ok) throw new Error(response.status);
-        else return response.json();
-      })
-    
-      .then(() => {
-        document.getElementById('school_edited').style.display="block";
-        document.getElementById('school_error').style.display="none";
-        setTimeout(function(){ document.getElementById('school_edited').style.display = "none"; }, 2000);
-    })
-    .catch(() => {
-        document.getElementById('school_error').style.display="block";
-        document.getElementById('school_edited').style.display="none";
-        setTimeout(function(){ document.getElementById('school_error').style.display = "none"; }, 2000);
-    });
-
-
-    
-    
-
-}
-
-  return (
-    <div class="edit-teacher">
-      <Typography variant='h2'>
-        Edit School
+    return (
+        <div class="edit-teacher">
+            <Typography variant='h2'>
+                Edit School
       </Typography>
-      <hr className="Title"/>
-      
-      <form onSubmit={handleRegister} encType="multipart/form-data" class="form-teacher">
-                
+            <hr className="Title" />
+
+            <form onSubmit={handleRegister} encType="multipart/form-data" class="form-teacher">
+
                 <div class="row">
                     <label>School Name:</label>
-                    <input 
+                    <input
                         type="text"
                         name="name"
                         id='nm2'
@@ -128,7 +146,7 @@ const handleRegister = (e) => {
                 </div>
                 <div class="row">
                     <label>Email:</label>
-                    <input 
+                    <input
                         type="text"
                         name="email"
                         id='em2'
@@ -139,7 +157,7 @@ const handleRegister = (e) => {
                 </div>
                 <div class="row">
                     <label>Country:</label>
-                    <input 
+                    <input
                         type="text"
                         name="country"
                         id='cnt'
@@ -151,7 +169,7 @@ const handleRegister = (e) => {
 
                 <div class="row">
                     <label>City:</label>
-                    <input 
+                    <input
                         type="text"
                         name="city"
                         id='cit2'
@@ -163,7 +181,7 @@ const handleRegister = (e) => {
 
                 <div class="row">
                     <label>Address:</label>
-                    <input 
+                    <input
                         type="text"
                         name="address"
                         id='ad2'
@@ -187,7 +205,7 @@ const handleRegister = (e) => {
 
                 <div class="row">
                     <label>Phone:</label>
-                    <input 
+                    <input
                         type="text"
                         name="phone"
                         id='ph2'
@@ -197,7 +215,7 @@ const handleRegister = (e) => {
                     />
                 </div>
 
-                
+
                 <div class="row-button">
                     <div class="button-photo">
                         <input
@@ -208,45 +226,45 @@ const handleRegister = (e) => {
                             name="picture"
                             className="photo"
                         />
-                   
+
                         <label htmlFor='picture'>
-                            <Button variant="contained" border={1} component="span" size="medium"   style={{backgroundColor: "#3069f4", color: "white", width: 150, height:40}}>
-                            <Typography variant='h5'>
-                                Upload
+                            <Button variant="contained" border={1} component="span" size="medium" style={{ backgroundColor: "#3069f4", color: "white", width: 150, height: 40 }}>
+                                <Typography variant='h5'>
+                                    Upload
                             </Typography>
-                            <IconButton color="white" aria-label="upload picture" component="span">
-                            <PhotoCamera />
-                            </IconButton>
-                            </Button>
-                        </label>
-                        
-                    </div>
-                        <button type="submit" id="submit" className="submit">
-                    
-                        </button>
-                        <label htmlFor='submit'>
-                            <Button variant="contained" border={1} component="span" size="medium"  style={{backgroundColor: "#3069f4", color: "white", width: 150 ,height:40}}>
-                            <Typography variant='h5'>
-                                Update
-                            </Typography>
-                           
+                                <IconButton color="white" aria-label="upload picture" component="span">
+                                    <PhotoCamera />
+                                </IconButton>
                             </Button>
                         </label>
 
+                    </div>
+                    <button type="submit" id="submit" className="submit">
+
+                    </button>
+                    <label htmlFor='submit'>
+                        <Button variant="contained" border={1} component="span" size="medium" style={{ backgroundColor: "#3069f4", color: "white", width: 150, height: 40 }}>
+                            <Typography variant='h5'>
+                                Update
+                            </Typography>
+
+                        </Button>
+                    </label>
+
                 </div>
-              
-                
-                
-                
+
+
+
+
             </form>
             <div id="school_edited" class="response-edit">
-                <Alert style={{fontSize: 15}} onClose={() => {document.getElementById('school_edited').style.display = "none";}}>School updated!</Alert>
+                <Alert style={{ fontSize: 15 }} onClose={() => { document.getElementById('school_edited').style.display = "none"; }}>School updated!</Alert>
             </div>
             <div id="school_error" class="response-edit">
-                <Alert severity="error" style={{fontSize: 15}} onClose={() => {document.getElementById('school_error').style.display = "none";}}>The school was not updated, check that the fields are not empty</Alert>
+                <Alert severity="error" style={{ fontSize: 15 }} onClose={() => { document.getElementById('school_error').style.display = "none"; }}>The school was not updated, check that the fields are not empty</Alert>
             </div>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default EditSchool;
