@@ -1,27 +1,37 @@
-
 import React from 'react'
 import MenuBar from '../containers/MenuBar'
 import logo from '../assets/images/bomberbotLogo.png';
-// este archivo es el layout que va a seguir la aplicacion
 
 
-const Layout = ({children}) => {
+/**
+ * Layout component that defines the layout of the SPA
+ *
+ * @component
+ * @example
+ * 
+ * return (
+ *   <Layout>
+ *      <MenuBar/> <-- Fixed components along app
+ *      {children components} <-- no fixed components
+ *   </Layout>
+ * )
+ */
 
 
-return(
-// Aqui va el componente que hizo info / compontente/container FIJO ⚛️
-<div className='parent-container'>
-    <MenuBar/>
-    <div></div>
-    <div className='right-container'>
-        <div className='Logo-bomberbot'>
-            <img src={logo} alt='Logo'></img>
+const Layout = ({ children }) => {
+
+    return (
+        <div className='parent-container'>
+            <MenuBar />
+            <div></div>
+            <div className='right-container'>
+                <div className='Logo-bomberbot'>
+                    <img src={logo} alt='Logo'></img>
+                </div>
+                {children}
+            </div>
         </div>
-        {/* Aqui van todos los componentes que van a cambiar del layout */}
-        {children}
-    </div>
-</div>
-)
+    )
 }
 export default Layout;
 

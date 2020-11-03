@@ -3,18 +3,35 @@ import '../assets/styles/components/Licenses.scss'
 import { Alert } from '@material-ui/lab';
 
 
-function showmessage(licenses){
-    if(licenses == 'basic'){
+/**
+ * Draw a message when click buy button
+ * @param   {string} licenses  Type of license (basic, annual)
+ * @return  {}
+ */
+
+
+function showmessage(licenses) {
+    if (licenses == 'basic') {
         document.getElementById('message1').style.display = "block";
         document.getElementById('message2').style.display = "none";
     }
-    if(licenses == 'annual'){
+    if (licenses == 'annual') {
         document.getElementById('message2').style.display = "block";
         document.getElementById('message1').style.display = "none";
     }
-    
-
 }
+
+
+/**
+ * Licenses component that shows the licenses availables
+ *
+ * @component
+ * @example
+ * 
+ * return (
+ *   <Licenses />
+ * )
+ */
 
 
 function Licenses() {
@@ -35,10 +52,10 @@ function Licenses() {
                             <li>get reports</li>
                         </ul>
                     </div>
-                    <button id='Button-buy' onClick={() => {showmessage("basic");}}>Buy</button>
+                    <button id='Button-buy' onClick={() => { showmessage("basic"); }}>Buy</button>
                 </div>
                 <div id='annual-license'>
-                <div id='header'>
+                    <div id='header'>
                         <p id='title-license'>Annual +</p>
                         <p id='subtitle-license'>Full access for all teachers</p>
                     </div>
@@ -54,16 +71,16 @@ function Licenses() {
                             <li>Access to all lessons</li>
                         </ul>
                     </div>
-                    <button id='Button-buy' onClick={() => {showmessage("annual");}}>Buy</button>
-        </div>
-        </div>
-            <div id="message1" className="message"> 
-            <Alert style={{fontSize: 15}} onClose={() => {document.getElementById('message1').style.display = "none";}}>You have bought a license Basic</Alert>
+                    <button id='Button-buy' onClick={() => { showmessage("annual"); }}>Buy</button>
+                </div>
             </div>
-            <div id="message2" className="message"> 
-            <Alert style={{fontSize: 15}} onClose={() => {document.getElementById('message2').style.display = "none";}}>You have bought a license Annual+</Alert>
+            <div id="message1" className="message">
+                <Alert style={{ fontSize: 15 }} onClose={() => { document.getElementById('message1').style.display = "none"; }}>You have bought a license Basic</Alert>
             </div>
-      </div>  
+            <div id="message2" className="message">
+                <Alert style={{ fontSize: 15 }} onClose={() => { document.getElementById('message2').style.display = "none"; }}>You have bought a license Annual+</Alert>
+            </div>
+        </div>
     )
 }
 
