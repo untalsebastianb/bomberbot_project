@@ -1,100 +1,106 @@
 # Bomberbot School Manager
 
-_Acá va un párrafo que describa lo que es el proyecto_
+_MVP developed as an additional utility for [Bomberbot platform](https://bomberbot.com/). This tool could keep track of teachers information inside a specific school. Register and edit both teachers and school profile, send emails to any teacher and generate global report for the school or report per teacher._
 
-## Comenzando 🚀
+_For more information check our landing page [here](https://bomberbotschoolmanager.netlify.app/)_
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+## Beginning 🚀
 
-Mira **Deployment** para conocer como desplegar el proyecto.
-
-
-### Pre-requisitos 📋
-
-_Que cosas necesitas para instalar el software y como instalarlas_
+_Clone this repository using the following command._
 
 ```
-Da un ejemplo
+git clone https://github.com/untalsebastianb/bomberbot_project.git
+```
+
+### Prerequisites 📋
+
+_Needed Technologies_
+* React 16.13.1
+* NodeJS 10.22.1
+* Python 3.6.9
+
+#### _Backend_
+_Using the [requirements.txt](./requirements.txt) install the prerequisites needed for backend_
+```
+pip3 install -r requirements.txt
+```
+
+#### _Frontend_
+_Enter to breact folder inside the frontend folder and run the following command_ 
+```
+npm install
 ```
 
 ### Instalación 🔧
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
+_To run the development environment you must follow the following steps:_
 
-_Dí cómo será ese paso_
-
-```
-Da un ejemplo
-```
-
-_Y repite_
+_1. Make sure to make the migrations of the database using the following commands:_
 
 ```
-hasta finalizar
+python3 manage.py makemigrations
+python3 manage.py migrate
 ```
+_2. Go to the frontend folder and enter the breact folder._
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
+_3. Execute the following command there:_
 ```
-Da un ejemplo
+npm run build
 ```
+_4. Then enter to backend folder_
 
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
+_5. Execute the following command to run the development server:_
+```
+python3 manage.py runserver
+```
+_6. Enter the URL to access the platform in the development environment._
 
 ```
-Da un ejemplo
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
 ```
 
-## Despliegue 📦
+## Functionalities ⚙️
 
-_Agrega notas adicionales sobre como hacer deploy_
+_Checkout the functionalities of the [Bomberbot School Manager](https://www.youtube.com/watch?v=kqUpcn9zHsg)_
 
-## Construido con 🛠️
+## Deployment 📦
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+<p align="left"> <a href="https://heroku.com" target="_blank"> <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/> </a> <a href="https://gunicorn.org/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/gunicorn/gunicorn-icon.svg" alt="gunicorn" width="40" height="40"/> </a> </p>
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
 
-## Contribuyendo 🖇️
+## Building tools 🛠️
 
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
+<p align=“center”> <a href="https://www.w3schools.com/css/" target="_blank"> 
+<img src="https://devicons.github.io/devicon/devicon.git/icons/css3/css3-original-wordmark.svg" alt="css3" width="60" height="60"/> 
+</a> <a href="https://www.djangoproject.com/" target="_blank"> <img src="https://devicons.github.io/devicon/devicon.git/icons/django/django-original.svg" alt="django" width="60" height="60"/> </a> 
+<a href="https://www.w3.org/html/" target="_blank"> <img src="https://devicons.github.io/devicon/devicon.git/icons/html5/html5-original-wordmark.svg" alt="html5" width="60" height="60"/> </a> 
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://devicons.github.io/devicon/devicon.git/icons/javascript/javascript-original.svg" alt="javascript" width="60" height="60"/> </a> 
+<a href="https://www.postgresql.org" target="_blank"> <img src="https://devicons.github.io/devicon/devicon.git/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="60" height="60"/> </a> 
+<a href="https://reactjs.org/" target="_blank"> <img src="https://devicons.github.io/devicon/devicon.git/icons/react/react-original-wordmark.svg" alt="react" width="60" height="60"/> </a> <a href="https://sass-lang.com" target="_blank"> <img src="https://devicons.github.io/devicon/devicon.git/icons/sass/sass-original.svg" alt="sass" width="60" height="60"/> </a> 
+<a href="https://www.sketch.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/sketchapp/sketchapp-icon.svg" alt="sketch" width="60" height="60"/> </a> </p>
 
-## Wiki 📖
 
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
+## Version 📌
 
-## Versionado 📌
+_Current version: 1.0_
 
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
+_Future updates:_
+* Chat with teachers.
+* Detailed reports.
+* Dynamic licenses status.
 
-## Autores ✒️
+## Authors ✒️
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
+* **Jose Alonso Restrepo Vidal** - *Backend Developer* - [JoseR98](https://github.com/JoseR98)
+* **Dairo Facundo Duarte** - *Backend Developer* - [dairof7](https://github.com/dairof7)
+* **Oscar Info Giraldo** - *Frontend Developer* - [untalinfo](https://github.com/untalinfo)
+* **Juan Sebastian Bueno Marín** - *Frontend Developer* - [untalsebastianb](https://github.com/untalsebastianb)
+* **Eduardo Ramos** - *Frontend Developer* - [somarae8](https://github.com/somarae8)
 
-* **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
+You could check also the list of all [contributors](https://github.com/untalsebastianb/bomberbot_project/graphs/contributors) who had participated in this project. 
 
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
+## Acknowledgment🎁
 
-## Licencia 📄
-
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
-
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* etc.
+* Bomberbot Company
+* Holberton School
