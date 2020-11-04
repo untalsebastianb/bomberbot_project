@@ -20,7 +20,7 @@ _Needed Technologies_
 * Python 3.6.9
 
 #### _Backend_
-_Using the [requirements.txt](./requirements.txt) install the prerequisites needed for backend_
+_Using the [requirements.txt](https://github.com/untalsebastianb/bomberbot_project/blob/master/requeriments.txt) install the prerequisites needed for backend_
 ```
 pip3 install -r requirements.txt
 ```
