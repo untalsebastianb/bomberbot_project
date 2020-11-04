@@ -1,31 +1,35 @@
+// print general report
 import ReactToPrint from 'react-to-print';
 import React, { useRef } from 'react'
 import '../assets/styles/components/TeacherProfile.scss'
 import GeneralReport from '../components/GeneralReport'
 
+
 class ComponentToPrint extends React.Component {
-    render() {
-      return (
-        <div>
-          <GeneralReport />
-        </div>
-      );
-    }
+  // this component contains the general report section to be printed
+  render() {
+    return (
+      <div>
+        <GeneralReport />
+      </div>
+    );
   }
+}
 
 
 const General_to_print = () => {
-    const componentRef = useRef();
-   
-    return (
-      <div className='GeneralReport'>
-        <ComponentToPrint ref={componentRef} />
-        <ReactToPrint
-          trigger={() => <button>Print this out!</button>}
-          content={() => componentRef.current}
-        />
-      </div>
-    );
-  };
+  // 
+  const componentRef = useRef();
 
-  export default General_to_print
+  return (
+    <div className='GeneralReport'>
+      <ComponentToPrint ref={componentRef} />
+      <ReactToPrint
+        trigger={() => <button>Print this out!</button>}
+        content={() => componentRef.current}
+      />
+    </div>
+  );
+};
+
+export default General_to_print

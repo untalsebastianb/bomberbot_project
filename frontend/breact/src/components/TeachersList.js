@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom'
 import '../assets/styles/components/TeachersManager.scss'
 
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
