@@ -1,33 +1,34 @@
+// component that creates the teachers search bar
 import React from 'react'
 import '../assets/styles/components/SearchBar.scss'
 import { useForm } from '../hooks/useForm';
 import { Link } from 'react-router-dom';
 
+
 const SearchBar = () => {
+  /*
+   * Create search bar for teachers
+   * Return: component search bar with filters
+   */
 
-  const [ {teacherToSearch}, handleInputChange ] = useForm('');
-
-  const handleSearch = (e) => {
-    e.preventDefault()
-    console.log(teacherToSearch)
-  }
+  // catch data to form, save in teacherToSearch
+  const [{ teacherToSearch }, handleInputChange] = useForm('');
 
   return (
     <div className="search-container">
-      <form onSubmit={handleSearch}>
+      <form>
         <input
           type="text"
           placeholder='Search a teacher'
           name='teacherToSearch'
-          value={ teacherToSearch }
-          onChange={ handleInputChange }
+          value={teacherToSearch}
+          onChange={handleInputChange}
         />
       </form>
       <Link to={`/create_teacher/${school_id}`}>
-            <p>Createghgjhgjhgjhgjhgjhgjhgjhghjgjh</p>
-        </Link>
+        <p>Create</p>
+      </Link>
       <span className='search-icon'></span>
-     
     </div>
   )
 }
