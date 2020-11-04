@@ -1,21 +1,32 @@
-"""bjango URL Configuration
+"""Urls of the project"""
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf.urls.static import static
+from rest_framework import routers
+from django.conf import settings
+from bomberbot import views as login_views
+from bomberbot.api_views import GeneralReport, TeacherReport, Teacher_By_Id
+from bomberbot.api_views import SchoolViewSet, TeacherViewSet, ClassroomViewSet, LessonViewSet
 
+router = routers.DefaultRouter()
+# Register all viewsets
+router.register(r'schools', SchoolViewSet, basename='schools')
+router.register(r'teacher', TeacherViewSet, basename='teacher')
+router.register(r'classroom', ClassroomViewSet, basename='classroom')
+router.register(r'lesson', LessonViewSet, basename='lesson')
+
+# Registe all views and apiviews
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('home/', login_views.home_view, name='home'),
+    path('login/', login_views.login_view, name='login'),
+    path('', login_views.login_view, name='root'),
+    path('logout/', login_views.logout_view, name='logout'),
+    path('signup/', login_views.signup_view, name='signup'),
+    path('api/general_report/', GeneralReport, name='general_report'),
+    path('api/teacher_report/', TeacherReport, name='teacher_report'),
+    path('api/teacher_by_id/', Teacher_By_Id, name='teacher_by_id'),
+    path('api/', include(router.urls))
+# Add media to the url path
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

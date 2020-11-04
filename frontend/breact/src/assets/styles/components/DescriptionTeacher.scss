@@ -1,0 +1,40 @@
+@import "../Var.scss";
+.Description {
+    font-family: $theme-font;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-gap: 0;
+    align-self: flex-start;
+    .ImageLeft {
+        width: 200px;
+        max-width: 100%;
+        .profilePicture {
+            border-radius: 100vh;
+            width: 150px;
+            height: 150px;
+            box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff; 
+            
+        }
+    }
+    .DescriptionRight {
+        
+        .TeacherName {
+            font-size: $header-font;
+        }
+        .teacherExperience {
+            font-size: $standard-font;
+            color: #5b5656;
+        }
+    }
+   
+}
+@media only screen and (max-width: 800px) {
+    .Description{
+        display: flex;
+        flex-direction: column;
+        margin-left: 11%;
+    }
+    .ImageLeft {
+
+    }
+}

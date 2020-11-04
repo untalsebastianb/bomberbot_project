@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./favicon.ico" />
+    {% block head_content %}{% endblock %}
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+        <div class="logo-bomberbot">
+            <img src="{% static "img/bomberbotLogo.png" %}">
+        </div>
+        <h1>Bomberbot</h1>
+        <div class="container">
+                {% block container %}
+                {% endblock%}
+        </div>
+</body>
+</html>

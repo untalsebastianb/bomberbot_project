@@ -1,0 +1,162 @@
+*
+{
+    font-family: "roboto";
+}
+
+body
+{
+    background-image: url("/static/img/background-login.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+}
+.container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Rectangle-Copy
+{
+    width: 35%;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 10px 10px 20px 0 #16293b;
+    border: solid 3px #aeb7f2;
+    background-color: #fefefe;
+    padding-top: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (max-width: 600px){
+    .Rectangle-Copy{
+        width: 60%;
+    }}
+.form-parent
+{
+    width: 50%;
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: 10px 10px 20px 0 #16293b;
+    border: solid 3px #aeb7f2;
+    background-color: #fefefe;
+    padding-top: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2
+{
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: white;
+    text-align: center;
+    font-size: 35px;
+    margin:auto;
+    margin-bottom: 1%;
+}
+
+h1
+{
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    margin:auto;
+    margin-bottom: 1%;
+}
+  
+.Password, .User-name, .input-signup
+{
+    width: 98%;
+    height: 45px;
+    font-size: 25px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #5b5656;
+    border: none;
+    border-bottom: solid 1px #aeb7f2;
+    outline:none;
+    margin-left: 1%;
+}
+
+.Rectangle 
+{
+    width: 150px;
+    height: 50px;
+    background-color: #3069f4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    margin: auto;
+}
+
+.If-you-are-not-regis
+{
+    width: 566px;
+    height: 51px;
+    color: #d8d8d8;   
+    font-size: 25px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    margin-top: 2%;
+}
+
+p
+{
+    text-align: center;
+}
+
+.If-you-are-not-regis button 
+{
+    font-weight: 500;
+    border: none;
+    color: #d8d8d8;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    background:transparent;
+    border-bottom: 1px solid white;
+}
+@font-face
+{
+    font-family: "roboto";
+    src: url("/static/fonts/Roboto-Regular.ttf");
+}
+.logo-bomberbot
+{
+    margin: auto;
+    width:122px;
+    height: 20%;
+    margin-top: 4%;
+}
+img
+{
+    width: 100%;
+    height: 100%;
+}
+.alert
+{
+    color: red;
+    font-size: 25px;
+    margin: 0;
+}
+.form-signup
+{
+    height: 70px;
+}

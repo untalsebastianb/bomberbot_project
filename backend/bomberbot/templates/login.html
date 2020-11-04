@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block head_content %}
+    <title>Login</title>
+{% endblock %}
+
+{% block container %}
+
+    {% load static %}
+    
+    <h2>Log in</h2>
+    
+        <form method="POST" action="{% url "login" %}" class="Rectangle-Copy">
+            {% csrf_token %}
+            <input class="User-name" type="text" placeholder="Username" name="username">
+            <input class="Password" type="password" placeholder="Password" name="password">
+            <button class="Rectangle" type="submit">Log in</button>
+        </form>
+        <form action="{% url "signup" %}" class="form-signup">
+            <p class="If-you-are-not-regis">If you are not registered, <button  type="submit">Sign up</button> </p>   
+        </form>
+        {% if error %}
+            <p class="alert">{{error}}</p>
+        {% endif %}
+
+{% endblock %}

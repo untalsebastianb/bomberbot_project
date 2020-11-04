@@ -1,20 +1,26 @@
 .menu {
-  float: left;
-  width: 15%;
+  
+  width: 190px;
   height: 100%;
   box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
   background-color: #181e47;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: flex-start;
+  // align-content: flex-start;
   text-align: center;
   position: fixed;
 }
 
-.menu > p{
-  margin: 2%;
+.contact-us{
+  height: 10%;
+  margin: 1%;
   color: #fefefe;
-  font-size: 12px;
+  font-size: 14px;
   box-sizing: border-box;
 }
+
+.contact-us p {
+  margin: 1% 0;
+}
+

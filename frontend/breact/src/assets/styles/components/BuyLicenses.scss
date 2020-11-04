@@ -1,0 +1,20 @@
+@import "../Var.scss";
+.Container-licenses {
+    width: 100%;
+    height: 80%;
+
+    h3 {
+        color: #0F1533;
+    }
+    .Title {
+        margin-bottom: 62px;
+    }
+}
+
+.Container-licenses h3{
+    color: #0F1533;
+    font-family: $theme-font;;
+    margin: 0;
+    display: block;
+}
+

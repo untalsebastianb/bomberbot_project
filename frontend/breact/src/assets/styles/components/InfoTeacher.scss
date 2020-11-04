@@ -1,0 +1,84 @@
+@import "../Var.scss";
+.generalInfo {
+    ul {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+        grid-gap: 10px;
+        margin-top: 4%;
+        list-style: none;
+        font-size: $standard-font;
+        color: #5b5656;
+        font-family: $theme-font;
+        .Country {
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+        .City {
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+        .Address {
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+        .PostCode {
+            grid-row-start: 4;
+            grid-row-end: 4;
+        }
+        .Email{
+            grid-row-start: 5;
+            grid-row-end: 5;
+        }
+        .Telephone {
+            grid-row-start: 6;
+            grid-row-end: 6;
+        }
+    }
+    .Button {
+        background-image: url('../../images/icon-reporte.svg');
+        background-repeat: no-repeat;
+        background-size: 30px 30px;
+        background-position: center;
+        grid-column-start: 2;
+        grid-row-start: 5;
+        grid-row-end: 5;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
+        border: 2px solid #aeb7f2;
+        background-color: #fefefe;
+        //position: absolute;
+        right: 20px;
+        bottom: 20px;
+        text-decoration: none;
+    }
+    .Button p {
+        color: #fff;
+        position: relative;
+        box-sizing: border-box;
+        font-size: .7rem;
+        background: #000;
+        border-radius: 50%;
+        transition: opacity .4s linear;
+        z-index: 10;
+        height: 53px;
+        width: 53px;
+        text-align: center;
+        margin: auto;
+        top: 0;
+        bottom: 1px;
+        right: 0px;
+        padding-top: 16px;
+        left: -1px;
+        opacity: 0;
+    }
+
+    .Button:hover p {
+        opacity: .75;
+    }
+}
+
+
+

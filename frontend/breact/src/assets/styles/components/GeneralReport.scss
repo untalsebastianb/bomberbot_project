@@ -1,0 +1,71 @@
+.titleSpace {
+    margin-bottom: 5%;
+}
+.globalTable {
+    width: 100%;
+    border: solid 2px #aeb7f2;
+    th {
+        border: solid 2px #aeb7f2;
+        font-size: 20px;
+    }
+    td {
+        border: solid 2px #aeb7f2;
+        text-align: center;
+        height: 25px;
+        font-size: 15px;
+    }
+}
+.GlobalHeaders{
+    border: solid 2px #aeb7f2;
+    font-size: 20px;
+}
+.GlobalValues{
+
+        border: solid 2px #aeb7f2;
+        font-size: 20px;
+
+}
+
+.TeacherName{
+    font-size: 37.4px!important;
+}
+
+
+.table1Space {
+    margin-bottom: 5%;
+}
+
+.teachersTable {
+    width: 100%;
+    border: solid 2px #aeb7f2;
+    th {
+        border: solid 2px #aeb7f2;
+        font-size: 20px;
+    }
+    td {
+        border: solid 2px #aeb7f2;
+        text-align: center;
+        height: 25px;
+        font-size: 15px;
+    }
+}
+
+.GeneralReport {
+    display: flex;
+    flex-direction: column;
+}
+.GeneralReport button {
+    margin: 3% 0;
+    align-self: center;
+    width: 20%;
+    height: 30px;
+    border: none;
+    background-color: #3069f4;
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.GeneralReport button:hover {
+    opacity: 0.9;
+}

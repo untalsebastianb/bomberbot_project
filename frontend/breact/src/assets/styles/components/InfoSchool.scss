@@ -1,0 +1,39 @@
+@import "../Var.scss";
+.generalInfo {
+    ul {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+        grid-gap: 10px;
+        margin-top: 4%;
+        list-style: none;
+        font-size: $standard-font;
+        color: #5b5656;
+        font-family: $theme-font;
+        .Country {
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+        .City {
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+        .Address {
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+        .PostCode {
+            grid-row-start: 4;
+            grid-row-end: 4;
+        }
+        .Email{
+            grid-row-start: 5;
+            grid-row-end: 5;
+        }
+        .Telephone {
+            grid-row-start: 6;
+            grid-row-end: 6;
+        }
+    }
+
+}

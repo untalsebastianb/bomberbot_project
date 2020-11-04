@@ -1,0 +1,75 @@
+.form-teacher{
+    
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
+    border: solid 2px #aeb7f2;
+    background-color: #fefefe;
+    width: 70%;
+    margin: auto;
+    margin-top: 5%;
+    
+}
+
+.form-teacher input{
+    border: none;
+    outline: none;
+    width: auto;
+    font-size: 15px;
+    font-weight: 500;
+    color: #181e47;
+    background-color: #fefefe;
+    border:solid;
+    border-color: transparent;
+} 
+.selector{
+    font-size: 15px;
+    border: solid 1px #aeb7f2;
+    width: auto;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 2%;
+}
+.photo{
+    font-size: 15px;
+    width: 66%;
+    height: 20px;
+}
+
+
+
+.row{
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 1px #aeb7f2;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.row label{
+    
+    font-size: 1.8rem;
+    width: auto;
+    height: 18px;
+    text-align: left;
+    font-weight: 50px;
+    color: #5b5656;
+}
+.button-photo input, .submit{
+    display: none;
+}
+
+.row-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2%;
+}
+.response-edit, .response-create{
+    width: 70%;
+    margin: auto;
+    display: none;
+    margin-top: 2%;
+}

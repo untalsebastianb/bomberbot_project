@@ -1,0 +1,93 @@
+#licenses {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin: 4% 10%;
+    height: auto;
+}
+
+#licenses > #Basic-license, #annual-license {
+    border-radius: 8px;
+    box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
+    border: solid 2px #aeb7f2;
+    background-color: #fefefe;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+#licenses #header {
+    border-bottom: solid 1px #aeb7f2;
+    padding: 0 0 4% 0;
+    text-align: center;
+}
+
+#licenses #header p {
+    margin: 0;
+}
+
+#licenses #header #title-license {
+    font-size: 3vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #5b5656;
+}
+
+#licenses #header #subtitle-license {
+    font-size: 1.2vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #181e47;
+}
+
+#licenses #description li {
+    font-size: 1.2vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #181e47;
+    margin: 1% 0;
+    
+}
+
+#licenses #Basic-license > #description {
+    margin-bottom: 38%;
+    
+}
+#licenses #annual-license > #description{
+    margin-bottom: 15%;
+}
+
+.parent-licenses{
+    display: flex;
+    flex-direction: column;
+}
+.message{
+    margin: auto;
+    width: 70%;
+    display: none;
+}
+#Button-buy {
+    border: none;
+    align-self: flex-end;
+    border-radius: 8px;
+    background-color: #3069f4;
+    color: #ffffff;
+    width: 40%;
+    height: 30px;
+    font-size: 1vw;
+    outline: none;
+}
+
+#Button-buy:hover {
+    opacity: 0.9;
+}

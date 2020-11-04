@@ -1,0 +1,14 @@
+@import "../Var.scss";
+.container-comunication > h3{
+    font-family: $theme-font;;
+    margin: 0;
+    display: block;
+    color: #0F1533;
+}
+.container-comunication 
+{
+    display: flex;
+    .Title {
+        margin-bottom: 62px;
+    }
+}

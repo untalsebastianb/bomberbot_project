@@ -1,0 +1,46 @@
+@import "../Var.scss";
+
+.ButtonEdit {
+  background-image: url('../../images/icon-edit.png');
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: center;
+  grid-column-start: 2;
+  grid-row-start: 6;
+  grid-row-end: 6;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 20px 0 #becbd8, -10px -10px 20px 0 #f3f9ff;
+  border: 2px solid #aeb7f2;
+  background-color: #fefefe;
+  // position: absolute;
+  right: 20px;
+  bottom: 20px;
+  text-decoration: none;
+  margin: 10% 0;
+}
+.ButtonEdit p {
+  color: #fff;
+  position: relative;
+  box-sizing: border-box;
+  font-size: .7rem;
+  background: #000;
+  border-radius: 50%;
+  transition: opacity .4s linear;
+  z-index: 10;
+  height: 53px;
+  width: 53px;
+  text-align: center;
+  margin: auto;
+  top: 0;
+  bottom: 1px;
+  right: 0px;
+  padding-top: 15px;
+  left: -1px;
+  opacity: 0;
+}
+
+.ButtonEdit:hover p {
+  opacity: .75;
+}
