@@ -96,7 +96,7 @@ _Future updates:_
 * **Dairo Facundo Duarte** - *Backend Developer* - [dairof7](https://github.com/dairof7)
 * **Oscar Info Giraldo** - *Frontend Developer* - [untalinfo](https://github.com/untalinfo)
 * **Juan Sebastian Bueno Marín** - *Frontend Developer* - [untalsebastianb](https://github.com/untalsebastianb)
-* **Eduardo Ramos** - *Frontend Developer* - [somarae8](https://github.com/somarae8)
+* **Eduardo Ramos** - *Frontend Developer* - [somarae8](https://github.com/earamosb8)
 
 You could check also the list of all [contributors](https://github.com/untalsebastianb/bomberbot_project/graphs/contributors) who had participated in this project. 
 
